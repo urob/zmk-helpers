@@ -1,4 +1,4 @@
-/* helper.dtsi: convenience macros for a streamlined user keymap file */
+/* helper.dtsi: convenience macros simplifying ZMK's keymap configuration */
 
 #define ZMK_HELPER_CORE_caps_word   compatible = "zmk,behavior-caps-word";  #binding-cells = <0>
 #define ZMK_HELPER_CORE_hold_tap    compatible = "zmk,behavior-hold-tap";   #binding-cells = <2>

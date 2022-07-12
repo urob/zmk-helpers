@@ -2,7 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include "helper.dtsi"
 
-/* some shortcuts */
+/* layer and key shortcuts */
 
 #define ___ &trans
 
@@ -24,7 +24,7 @@ ZMK_BEHAVIOR(hrm, hold_tap,
 // tap: sticky shift | double tap: capsword
 ZMK_BEHAVIOR(ss_cw, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&sk LSHFT>, <&caps_word>
+    bindings = <&sk LSHFT>, <&caps_word>;
 )
 
 // tap: backspace | shift + tap: delete | hold: num layer
@@ -35,7 +35,7 @@ ZMK_BEHAVIOR(bs_del_num, mod_morph,
 
 // windows sleep key
 ZMK_BEHAVIOR(win_sleep, macro,
-    wait-ms = <50>;
+    wait-ms = <100>;
     tap-ms = <5>;
     bindings = <&kp LG(X) &kp U &kp S>;
 )
@@ -62,7 +62,7 @@ ZMK_LAYER(nav_layer,
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           ___           ___           ___           ___           ___               ___           &kp LC(X)     &kp LC(INS)   &kp LS(INS)   ___
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                      ___           ___           ___               ___           ___           ___
+                                      ___           ___           ___               ___           &win_sleep    ___
      //                             ╰─────────────┴──── ────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
