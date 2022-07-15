@@ -186,7 +186,7 @@ For macOS use:
 ```
 This will send unicode characters using the OS's default input channels.
 For non-default input channels or for other operation systems, one can instead set the
-variables `OS_COMBO_LEAD` and `OS_COMBO_TRAIL` to the character sequences that
+variables `OS_UNICODE_LEAD` and `OS_UNICODE_TRAIL` to the character sequences that
 initialize/terminate the unicode input.
 
 **Syntax:** `ZMK_UNICODE_SINGLE(name, L0, L1, L2, L3)`
