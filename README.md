@@ -303,7 +303,7 @@ into your `.keymap` file. E.g., for a 36-key board, use:
 #include "../zmk-nodefree-config/keypos_def/keypos_36keys.h"
 ```
 
-#### Example: Defining combos using key position shortcuts
+#### Example 1: Defining combos using key position shortcuts
 
 ```C++
 ZMK_COMBO(copy,  &kp LC(C), LB2 LB3, ALL)
@@ -313,3 +313,37 @@ ZMK_COMBO(paste, &kp LC(V), LB1 LB2, ALL)
 This defines a "copy"-combo for the middle + ring finger on the left bottom row, and a
 "paste"-combo for the index + middle finger on the left bottom row. Both combos are active on all layers.
 
+#### Example 2: Home-row mods with positional hold-taps
+
+Here we use ZMK's [positional
+hold-tap](https://zmk.dev/docs/behaviors/hold-tap#positional-hold-tap-and-hold-trigger-key-positions)
+feature to make home-row mods only trigger with "opposite hand" keys.[^1] Using our
+positional shortcuts makes this straightforward: 
+
+```C++
+#define HRM_LT LM1 LM2 LM3 LM4                                      // left-hand HRMs
+#define HRM_RT RM1 RM2 RM3 RM4                                      // right-hand HRMs
+#define KEYS_LT LT0 LT1 LT2 LT3 LT4 LM0 HRM_LT LB0 LB1 LB2 LB3 LB4  // left-hand keys
+#define KEYS_RT RT0 RT1 RT2 RT3 RT4 RM0 HRM_RT RB0 RB1 RB2 RB3 RB4  // right-hand keys
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                              // thumb keys
+
+ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&kp>;
+    hold-trigger-key-positions = <KEYS_RT THUMBS HRM_LT>;  // include left-hand HRMs for chording
+)
+
+ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&kp>;
+    hold-trigger-key-positions = <KEYS_LT THUMBS HRM_RT>;  // include right-hand HRMs for chording
+)
+```
+
+[^1]: We also whitelist same-hand HRMs so that we can combine them to chord mods.
