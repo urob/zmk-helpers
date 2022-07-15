@@ -15,11 +15,12 @@ The following convenience macros are provided:
    ZMK macros [\[doc\]](#zmk_behavior)
 2. `ZMK_LAYER` adds new layers to your keymap [\[doc\]](#zmk_layer)
 3. `ZMK_COMBO` defines new combos [\[doc\]](#zmk_combo)
-4. `ZMK_UNICODE_SINGLE` and `ZMK_UNICODE_PAIR` create unicode characters [\[doc\]](#zmk_unicode)
-5. optional `international_chars` source files define a number of international character such
+4. `ZMK_CONDITIONAL_LAYERS` sets up "tri-layer" conditions [\[doc\]](#zmk_conditional_layers)
+5. `ZMK_UNICODE_SINGLE` and `ZMK_UNICODE_PAIR` create unicode characters [\[doc\]](#zmk_unicode)
+6. optional `international_chars` source files define a number of international character such
    as <kbd>ä</kbd>/<kbd>Ä</kbd> or <kbd>δ</kbd>/<kbd>Δ</kbd> that can be added to the keymap
    [\[doc\]](#international-characters)
-6. optional `keypos_def` source files define human-readable key position shortcuts for some popular
+7. optional `keypos_def` source files define human-readable key position shortcuts for some popular
    keyboards that simplify the configuration of combos and positional hold-taps
    [\[doc\]](#key-position-shortcuts)
 
@@ -164,6 +165,23 @@ active all layers. The first combo is triggered when the
 12th and 13th keys are pressed jointly within the `COMBO_TERM`, sending <kbd>Ctrl</kbd> + <kbd>C</kbd>. The
 second combo is triggered when the 13th and 14th keys are pressed jointly, sending
 <kbd>Ctrl</kbd> + <kbd>V</kbd>.
+
+### ZMK\_CONDITIONAL\_LAYERS
+
+This sets up tri-layer conditions.
+
+**Syntax:** `ZMK_CONDITIONAL_LAYERS(if_layers, then_layers)`
+* `if_layers`: a list of layers which trigger the `then_layer` if simultaneously active
+* `then_layer`: the layer which is activated when the if-condition is met. Due to ZMK's
+  layering model, it should generally have a higher number than the `if_layers`
+
+For instance, this triggers "layer 3" if layers "1" and "2" are
+simultaneously active. 
+```C++
+ZMK_CONDITIONAL_LAYERS(1 2, 3)
+```
+Mind that ZMK's layer numbering starts at 0! In general, it is recommended to use layer
+definitions, as demonstrated in [example.keymap](example.keymap), to simplify life.
 
 ### ZMK\_UNICODE
 
