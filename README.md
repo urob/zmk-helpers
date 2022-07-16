@@ -270,6 +270,11 @@ The "umlaut"-pairs can be added to the keymap using `&de_ae`, `&de_oe` and `&de_
   work. On Windows, one must install
   [WinCompose](https://github.com/samhocevar/wincompose). On macOS one must enable
   unicode input in the system preferences.
+* On Linux, there is a conflict between the default unicode input channel and the
+  implementation of `ZMK_UNICODE_PAIR`. For a workaround, one can use the `helper.h`
+  files from the [unicode_linux](https://github.com/urob/zmk-nodefree-config/blob/unicode_linux/helper.h) branch. One limitation of the workaround is that one
+  must use `LEFT_SHIFT` for the shifted version (`RIGHT_SHIFT` will
+  send garbage sequence).
 
 ### International characters
 
@@ -286,7 +291,8 @@ keymap using, e.g., `&de_ae`, `&el_alpha` or `&sv_ao`
 (each language has its own prefix; see the language files for a complete list of available characters).
 
 **Note:** These definitions make use of unicode in the background,
-please see the unicode documentation above for prerequisites. 
+please see the unicode documentation above for prerequisites. For Linux users, make sure
+to implement the described workaround for a current issue.
 
 ### Key position shortcuts
 
