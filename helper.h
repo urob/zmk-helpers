@@ -81,7 +81,7 @@
     #if HOST_OS == 2
         #define OS_UNICODE_LEAD &macro_press &kp LALT      // macOS
     #elif HOST_OS == 1 
-        #define OS_UNICODE_LEAD &macro_tap &kp LS(LC(U))   // Linux
+        #define OS_UNICODE_LEAD &macro_tap &kp RS(LC(U))   // Linux
     #else
         #define OS_UNICODE_LEAD &macro_tap &kp RALT &kp U  // Windows + WinCompose (default)
     #endif
@@ -118,8 +118,8 @@
                 label = ZMK_HELPER_STRINGIFY(UC_MORPH_ ## name); \
                 #binding-cells = <0>; \
                 bindings = <uc_binding>, <shifted_uc_binding>; \
-                mods = <(MOD_LSFT|MOD_RSFT)>; \
-                masked_mods = <(MOD_LSFT|MOD_RSFT)>; \
+                mods = <MOD_LSFT>; \
+                masked_mods = <MOD_LSFT>; \
             }; \
         }; \
     };
