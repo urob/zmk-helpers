@@ -62,9 +62,9 @@
         }; \
     };
 
-/* ZMK_CONDITIONAL_LAYERS */
+/* ZMK_CONDITIONAL_LAYER */
 
-#define ZMK_CONDITIONAL_LAYERS(if_layers, then_layer) \
+#define ZMK_CONDITIONAL_LAYER(if_layers, then_layer) \
     / { \
         conditional_layers { \
             compatible = "zmk,conditional-layers"; \

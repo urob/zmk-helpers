@@ -48,7 +48,7 @@ ZMK_BEHAVIOR(win_sleep, macro,
 ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
 
 // replace a/o/u/s with German umlauts when NAV and NUM are held jointly
-ZMK_CONDITIONAL_LAYERS(NAV NUM, GER)
+ZMK_CONDITIONAL_LAYER(NAV NUM, GER)
 
 // combos
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
