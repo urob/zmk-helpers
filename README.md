@@ -225,7 +225,7 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
 
 
 * `ZMK_UNICODE_PAIR` requires ZMK patched with a modified version of the "masked-mods"
-  PR, available from [https://github.com/urob/zmk/tree/masked-mods](https://github.com/urob/zmk/tree/masked-mods).[^1] If you don't want
+  PR, available from [https://github.com/urob/zmk/tree/masked-mods-pr](https://github.com/urob/zmk/tree/masked-mods-pr).[^1] If you don't want
   to maintain your own ZMK repository, you can use ZMK's [beta
   testing](https://zmk.dev/docs/features/beta-testing) feature to configure Github
   Actions to build against a patched remote branch of ZMK. To do so, replace the
@@ -239,7 +239,7 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
       projects:
         - name: zmk
           remote: urob
-          revision: masked-mods
+          revision: masked-mods-pr
           import: app/west.yml
       self:
         path: config
@@ -366,7 +366,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 [^1]: The original "masked-mods" PR is available [here](https://github.com/zmkfirmware/zmk/pull/1114).
       It works well when using the standard unicode configuration with Windows or macOS, 
       but leads to garbled unicode sequences under Linux. Using the patched version from
-      https://github.com/urob/zmk/tree/masked-mods makes it work under all three
+      https://github.com/urob/zmk/tree/masked-mods-pr makes it work under all three
       operating systems and for non-standard configurations.
 
 [^2]: The default for Windows is `OS_UNICODE_LEAD` set to tap <kbd>Right Alt</kbd>
