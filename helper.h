@@ -1,4 +1,4 @@
-/* 
+/*
  * helper.h
  *
  * Convenience macros simplifying ZMK's keymap configuration.
@@ -80,7 +80,7 @@
 #if !defined OS_UNICODE_LEAD
     #if HOST_OS == 2
         #define OS_UNICODE_LEAD &macro_press &kp LALT      // macOS
-    #elif HOST_OS == 1 
+    #elif HOST_OS == 1
         #define OS_UNICODE_LEAD &macro_tap &kp LS(LC(U))   // Linux
     #else
         #define OS_UNICODE_LEAD &macro_tap &kp RALT &kp U  // Windows + WinCompose (default)
@@ -89,7 +89,7 @@
 #if !defined OS_UNICODE_TRAIL
     #if HOST_OS == 2
         #define OS_UNICODE_TRAIL &macro_release &kp LALT  // macOS
-    #elif HOST_OS == 1 
+    #elif HOST_OS == 1
         #define OS_UNICODE_TRAIL &macro_tap &kp SPACE     // Linux
     #else
         #define OS_UNICODE_TRAIL &macro_tap &kp RET       // Windows + WinCompose (default)
@@ -119,7 +119,7 @@
                 #binding-cells = <0>; \
                 bindings = <uc_binding>, <shifted_uc_binding>; \
                 mods = <(MOD_LSFT|MOD_RSFT)>; \
-                masked_mods = <(MOD_LSFT|MOD_RSFT)>; \
+                masked-mods = <(MOD_LSFT|MOD_RSFT)>; \
             }; \
         }; \
     };

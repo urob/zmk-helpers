@@ -8,6 +8,8 @@ This repository provides simple convenience macros that simplify the configurati
 many common use cases. It results in a "node-free" user configuration with a more
 streamlined syntax. Check out [example.keymap](example.keymap) to see it in action.
 
+See [changelog](#changelog) for latest changes.
+
 ## Overview
 
 The following convenience macros are provided:
@@ -225,9 +227,9 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
 #### Dependencies for unicode
 
 
-* `ZMK_UNICODE_PAIR` requires ZMK patched with a modified version of the "masked-mods"
-  PR, available from [https://github.com/urob/zmk/tree/masked-mods-pr](https://github.com/urob/zmk/tree/masked-mods-pr).[^1] If you don't want
-  to maintain your own ZMK repository, you can use ZMK's [beta
+* `ZMK_UNICODE_PAIR` requires ZMK patched with [PR
+  #1412](https://github.com/zmkfirmware/zmk/pull/1412). If you don't want to maintain
+  your own ZMK repository, you can use ZMK's [beta
   testing](https://zmk.dev/docs/features/beta-testing) feature to configure Github
   Actions to build against a patched remote branch of ZMK. To do so, replace the
   contents of `west.yml` in your `zmk-config/config` directory with the following
@@ -240,7 +242,7 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
       projects:
         - name: zmk
           remote: urob
-          revision: masked-mods-pr
+          revision: fix-mod-morph
           import: app/west.yml
       self:
         path: config
@@ -263,7 +265,7 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
     This will send unicode characters using the OS's default input channels.
     For non-default input channels or for other operating systems, one can instead set the
     variables `OS_UNICODE_LEAD` and `OS_UNICODE_TRAIL` to the character sequences that
-    initialize/terminate the unicode input.[^2]
+    initialize/terminate the unicode input.[^1]
 
 * On Windows and macOS there are additional requirements for unicode input to work. On
   Windows, one must install [WinCompose](https://github.com/samhocevar/wincompose). On
@@ -272,7 +274,7 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
 ### International characters
 
 There are pre-defined definitions for international characters for a few
-languages  --- currently German, Greek and Swedish (contributions are welcome)[^3]. These can be
+languages  --- currently German, Greek and Swedish (contributions are welcome)[^2]. These can be
 loaded by sourcing the corresponding files; e.g.:
 ```C++
 #include "../zmk-nodefree-config/international_chars/german.dtsi"
@@ -336,7 +338,7 @@ This defines a "copy"-combo for the middle + ring finger on the left bottom row,
 
 Here we use ZMK's [positional
 hold-tap](https://zmk.dev/docs/behaviors/hold-tap#positional-hold-tap-and-hold-trigger-key-positions)
-feature to make home-row mods only trigger with "opposite hand" keys.[^4] Using
+feature to make home-row mods only trigger with "opposite hand" keys.[^3] Using
 key-position helpers makes this straightforward: 
 
 ```C++
@@ -364,19 +366,20 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
     hold-trigger-key-positions = <KEYS_LT THUMBS HRM_RT>;  // include right-hand HRMs for chording
 )
 ```
-[^1]: The original "masked-mods" PR is available [here](https://github.com/zmkfirmware/zmk/pull/1114).
-      It works well when using the standard unicode configuration with Windows or macOS, 
-      but leads to garbled unicode sequences under Linux. Using the patched version from
-      https://github.com/urob/zmk/tree/masked-mods-pr makes it work under all three
-      operating systems and for non-standard configurations.
 
-[^2]: The default for Windows is `OS_UNICODE_LEAD` set to tap <kbd>Right Alt</kbd>
+## Changelog
+
+* 7/31/2022: Switch unicode dependency from PR #1114 to
+  [#1412](https://github.com/zmkfirmware/zmk/pull/1412)
+
+
+[^1]: The default for Windows is `OS_UNICODE_LEAD` set to tap <kbd>Right Alt</kbd>
     followed by <kbd>U</kbd> and `OS_UNICODE_TRAIL` set to tap <kbd>Return</kbd>. 
     The default for Linux is `OS_UNICODE_LEAD` set to tap <kbd>Shift</kbd> +
     <kbd>Ctrl</kbd> + <kbd>U</kbd> and `OS_UNICODE_TRAIL` set to tap <kbd>Space</kbd>. 
     The default for macOS is `OS_UNICODE_LEAD` set to hold <kbd>Left Alt</kbd>
     and `OS_UNICODE_TRAIL` set to release <kbd>Left Alt</kbd>.
 
-[^3]: Swedish language support was added by discord user "captainwoot".
+[^2]: Swedish language support was added by discord user "captainwoot".
 
-[^4]: We also whitelist same-hand HRMs so that we can combine them to chord mods.
+[^3]: We also whitelist same-hand HRMs so that we can combine them to chord mods.
