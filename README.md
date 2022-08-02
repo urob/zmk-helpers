@@ -145,13 +145,14 @@ ZMK_KEYMAP(default_layer,
   two layers). If set to `ALL` the combo is active on all layers.
 
 By default, the timeout for combos created with `ZMK_COMBO` is 30ms. If `COMBO_TERM` is
-set prior to calling `ZMK_COMBO`, the value of `COMBO_TERM` is used instead. Note: while
+reset prior to calling `ZMK_COMBO`, the new value of `COMBO_TERM` is used instead. Note: while
 it is possible to set different timeouts for different combos, this is known to cause
 [issues](https://github.com/zmkfirmware/zmk/issues/905) with overlapping combos and should be avoided.
 
 #### Example: copy and paste combos
 
 ```C++
+#undef COMBO_TERM
 #define COMBO_TERM 50
 ZMK_COMBO(copy,  &kp LC(C), 12 13, ALL)
 ZMK_COMBO(paste, &kp LC(V), 13 14, ALL)
