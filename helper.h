@@ -44,7 +44,7 @@
 
 /* ZMK_COMBOS */
 
-#define ALL (-1)
+#define ALL 0xff
 #if !defined COMBO_TERM
     #define COMBO_TERM 30
 #endif
