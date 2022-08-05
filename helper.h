@@ -62,6 +62,23 @@
         }; \
     };
 
+#if !defined COMBO_ADD_ON
+    #define COMBO_ADD_ON
+#endif
+#define ZMK_COMBO_ADV(name, combo_bindings, keypos, combo_layers, combo_timeout) \
+    / { \
+        combos { \
+            compatible = "zmk,combos"; \
+            combo_ ## name { \
+                timeout-ms = <combo_timeout>; \
+                bindings = <combo_bindings>; \
+                key-positions = <keypos>; \
+                layers = <combo_layers>; \
+                COMBO_ADD_ON \
+            }; \
+        }; \
+    };
+
 /* ZMK_CONDITIONAL_LAYER */
 
 #define ZMK_CONDITIONAL_LAYER(if_layers, then_layer) \
