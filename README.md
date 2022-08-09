@@ -374,10 +374,10 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 * **8/05/2022:** New combo macro `ZMK_COMBO_ADV` for "advanced" combo setups. Compared
   to the regular `ZMK_COMBO` macro, it takes the combo-timeout as fifth argument.
-  Moreover, if `COMBO_ADD_ON` is defined, it includes its definition as additional
+  Moreover, if `COMBO_HOOK` is defined, it includes its definition as additional
   options. For example, to use the new global-quick-tap for combos option introduced in
   [PR #1387](https://github.com/andrewjrae/zmk/tree/min-prior-ms), one would set
-  `#define COMBO_ADD_ON global-quick-tap-ms = <125>;` before calling `ZMK_COMBO_ADV`.
+  `#define COMBO_HOOK global-quick-tap-ms = <125>;` before calling `ZMK_COMBO_ADV`.
   See [my personal combo
   setup](https://github.com/urob/zmk-config/blob/main/config/combos.dtsi) for examples.
 * **7/31/2022:** Switch unicode dependency from PR #1114 to
