@@ -262,9 +262,9 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
     #define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
     #include helper.h
     ```
-    For macOS use:
+    For macOS/Windows-Alt-Codes use:
     ```C++
-    #define HOST_OS 2  // set to 2 for macOS, default is 0 (Windows)
+    #define HOST_OS 2  // set to 2 for macOS/Windows-Alt-Codes, default is 0 (Windows)
     #include helper.h
     ```
     This will send unicode characters using the OS's default input channels.
@@ -273,7 +273,8 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
     initialize/terminate the unicode input.[^1]
 
 * On Windows and macOS there are additional requirements for unicode input to work. On
-  Windows, one must install [WinCompose](https://github.com/samhocevar/wincompose). On
+  Windows, one must install [WinCompose](https://github.com/samhocevar/wincompose) for
+  full support (or use Win-Alt-Codes for limited support in select software). On
   macOS one must enable unicode input in the system preferences.
 
 ### International characters
@@ -292,6 +293,13 @@ keymap using, e.g., `&de_ae`, `&el_alpha` or `&sv_ao`
 
 **Dependencies:** These definitions make use of unicode in the background,
 see the unicode section above for [prerequisites](#dependencies-for-unicode).
+
+**Note:** Windows-Alt-Codes use different keycode sequences than the
+usual unicode sequences, requiring different definitions. Currently, they are
+pre-defined for German:
+```C++
+#include "../zmk-nodefree-config/international_chars/german_alt.dtsi"
+```
 
 ### Key-position helpers
 
@@ -372,6 +380,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 ## Changelog
 
+* **9/11/2022:** Support for Windows-Alt-Codes
 * **8/05/2022:** New combo macro `ZMK_COMBO_ADV` for "advanced" combo setups. Compared
   to the regular `ZMK_COMBO` macro, it takes the combo-timeout as fifth argument.
   Moreover, if `COMBO_HOOK` is defined, it includes its definition as additional

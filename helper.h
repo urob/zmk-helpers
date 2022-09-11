@@ -96,7 +96,7 @@
 
 #if !defined OS_UNICODE_LEAD
     #if HOST_OS == 2
-        #define OS_UNICODE_LEAD &macro_press &kp LALT      // macOS
+        #define OS_UNICODE_LEAD &macro_press &kp LALT      // macOS/Windows-Alt-Codes
     #elif HOST_OS == 1
         #define OS_UNICODE_LEAD &macro_tap &kp LS(LC(U))   // Linux
     #else
@@ -105,7 +105,7 @@
 #endif
 #if !defined OS_UNICODE_TRAIL
     #if HOST_OS == 2
-        #define OS_UNICODE_TRAIL &macro_release &kp LALT  // macOS
+        #define OS_UNICODE_TRAIL &macro_release &kp LALT  // macOS/Windows-Alt-Codes
     #elif HOST_OS == 1
         #define OS_UNICODE_TRAIL &macro_tap &kp SPACE     // Linux
     #else
