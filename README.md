@@ -380,6 +380,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 ## Changelog
 
+* **10/08/2022**: Remove depreciated masked-mods option from unicode helper
 * **9/11/2022:** Support for Windows-Alt-Codes
 * **8/05/2022:** New combo macro `ZMK_COMBO_ADV` for "advanced" combo setups. Compared
   to the regular `ZMK_COMBO` macro, it takes the combo-timeout as fifth argument.
