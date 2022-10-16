@@ -230,8 +230,10 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
 #### Dependencies for unicode
 
 
-* `ZMK_UNICODE_PAIR` requires ZMK patched with [PR
-  #1412](https://github.com/zmkfirmware/zmk/pull/1412). If you need help maintaining
+* `ZMK_UNICODE_PAIR` requires a current ZMK after [PR
+  #1412](https://github.com/zmkfirmware/zmk/pull/1412) was merged into main. If you are
+  building with Github Actions using the default `west.yml` you are all set.
+  <!-- If you need help maintaining
   your own ZMK repository, check out [this
   guide](https://gist.github.com/urob/68a1e206b2356a01b876ed02d3f542c7). If you don't
   want to maintain your own ZMK repository, you can use ZMK's [beta
@@ -252,6 +254,7 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
       self:
         path: config
     ```
+    -->
 * The input of unicode characters differs across operating systems. By
     default, `ZMK_UNICODE` is configured for Windows (using WinCompose). To set it up
     for another OS, set the variable
@@ -380,7 +383,8 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 ## Changelog
 
-* **10/08/2022**: Remove depreciated masked-mods option from unicode helper
+* **10/16/2022:** Remove dependency on PR #1412 as it is now merged into main
+* **10/08/2022:** Remove depreciated masked-mods option from unicode helper
 * **9/11/2022:** Support for Windows-Alt-Codes
 * **8/05/2022:** New combo macro `ZMK_COMBO_ADV` for "advanced" combo setups. Compared
   to the regular `ZMK_COMBO` macro, it takes the combo-timeout as fifth argument.
