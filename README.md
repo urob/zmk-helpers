@@ -27,7 +27,7 @@ The following convenience macros are provided:
 
 ## Quickstart
 
-1. Copy this repository into the root folder of your zmk-config. The
+1. Copy this repository into the root folder of your zmk-config (or add as submodule[^1]). The
    folder structure should look as follows:
    ```
     zmk-config
@@ -52,14 +52,14 @@ The following convenience macros are provided:
 ### ZMK\_BEHAVIOR
 
 `ZMK_BEHAVIOR` can be used to create any of the following ZMK behaviors: caps-word,
-hold-tap, key-repeat, macro, mod-morph, sticky-key or tap-dance
+hold-tap, key-repeat, macro, mod-morph, sticky-key, tap-dance or tri-state.
 
 **Syntax:** `ZMK_BEHAVIOR(name, type, specification)`
 * `name`: a unique string chosen by the user (e.g., `my_behavior`). The new behavior can
   be added to the keymap using `&name` (e.g., `&my_behavior`).
 * `type`: the behavior to be created. It must be one of the following:
-  `caps_word`, `hold_tap`, `key_repeat`, `macro`, `mod_morph`, `sticky_key` or
-  `tap_dance`. Note that two-word types are separated by underscores (`_`).
+  `caps_word`, `hold_tap`, `key_repeat`, `macro`, `mod_morph`, `sticky_key`,
+  `tap_dance` or `tri_state`. Note that multiword behaviors are separated by underscores (`_`).
 * `specification`: the custom behavior code. It should contain the
   body of the corresponding [ZMK behavior configuration](https://zmk.dev/docs/config/behaviors)
   without the `label`, `#binding-cells` and `compatible` properties and without the
@@ -273,7 +273,7 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
     This will send unicode characters using the OS's default input channels.
     For non-default input channels or for other operating systems, one can instead set the
     variables `OS_UNICODE_LEAD` and `OS_UNICODE_TRAIL` to the character sequences that
-    initialize/terminate the unicode input.[^1]
+    initialize/terminate the unicode input.[^2]
 
 * On Windows and macOS there are additional requirements for unicode input to work. On
   Windows, one must install [WinCompose](https://github.com/samhocevar/wincompose) for
@@ -283,7 +283,7 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
 ### International characters
 
 There are pre-defined definitions for international characters for a few
-languages  --- currently German, Greek and Swedish (contributions are welcome)[^2]. These can be
+languages  --- currently German, Greek and Swedish (contributions are welcome)[^3]. These can be
 loaded by sourcing the corresponding files; e.g.:
 ```C++
 #include "../zmk-nodefree-config/international_chars/german.dtsi"
@@ -383,26 +383,32 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 ## Changelog
 
+* **11/09/2022:** Support for tri-state behavior (aka "swapper"), requires PR #1366
 * **10/16/2022:** Remove dependency on PR #1412 as it is now merged into main
 * **10/08/2022:** Remove depreciated masked-mods option from unicode helper
 * **9/11/2022:** Support for Windows-Alt-Codes
-* **8/05/2022:** New combo macro `ZMK_COMBO_ADV` for "advanced" combo setups. Compared
-  to the regular `ZMK_COMBO` macro, it takes the combo-timeout as fifth argument.
-  Moreover, if `COMBO_HOOK` is defined, it includes its definition as additional
-  options. For example, to use the new global-quick-tap for combos option introduced in
-  [PR #1387](https://github.com/andrewjrae/zmk/tree/min-prior-ms), one would set
-  `#define COMBO_HOOK global-quick-tap-ms = <125>;` before calling `ZMK_COMBO_ADV`.
-  See [my personal combo
+* **8/05/2022:** New macro `ZMK_COMBO_ADV` for "advanced" combo setups. Compared to
+  `ZMK_COMBO`, it takes a `TIMEOUT` argument and can be customized via `COMBO_HOOK`. See
+  [my personal combo
   setup](https://github.com/urob/zmk-config/blob/main/config/combos.dtsi) for examples.
 * **7/31/2022:** Switch unicode dependency from PR #1114 to
   [PR #1412](https://github.com/zmkfirmware/zmk/pull/1412)
 
+[^1]: If building with Github Actions, using submodules requires replacing
+  `.github/workflows/build.yml` in the local `zmk-config` with
+    ```
+    on: [push, pull_request, workflow_dispatch]
 
-[^1]: The default for Windows is `OS_UNICODE_LEAD` set to tap <kbd>Right Alt</kbd>
+    jobs:
+      build:
+        uses: urob/zmk/.github/workflows/build-user-config.yml@build-with-submodules
+    ```
+
+[^2]: The default for Windows is `OS_UNICODE_LEAD` set to tap <kbd>Right Alt</kbd>
     followed by <kbd>U</kbd> and `OS_UNICODE_TRAIL` set to tap <kbd>Return</kbd>. 
     The default for Linux is `OS_UNICODE_LEAD` set to tap <kbd>Shift</kbd> +
     <kbd>Ctrl</kbd> + <kbd>U</kbd> and `OS_UNICODE_TRAIL` set to tap <kbd>Space</kbd>. 
     The default for macOS is `OS_UNICODE_LEAD` set to hold <kbd>Left Alt</kbd>
     and `OS_UNICODE_TRAIL` set to release <kbd>Left Alt</kbd>.
 
-[^2]: Swedish language support was added by discord user "captainwoot".
+[^3]: Swedish language support was added by discord user "captainwoot".
