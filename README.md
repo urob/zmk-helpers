@@ -282,17 +282,18 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
 
 ### International characters
 
-There are pre-defined definitions for international characters for a few
-languages  --- currently German, Greek and Swedish (contributions are welcome)[^3]. These can be
-loaded by sourcing the corresponding files; e.g.:
+There are pre-defined definitions for international characters for a few languages  ---
+currently Danish, German, Greek and Swedish (contributions are welcome)[^3]. These can
+be loaded by sourcing the corresponding files; e.g.:
 ```C++
+#include "../zmk-nodefree-config/international_chars/danish.dtsi"
 #include "../zmk-nodefree-config/international_chars/german.dtsi"
 #include "../zmk-nodefree-config/international_chars/greek.dtsi"
 #include "../zmk-nodefree-config/international_chars/swedish.dtsi"
 ```
-Once sourced, international characters can be added to the
-keymap using, e.g., `&de_ae`, `&el_alpha` or `&sv_ao`
-(each language has its own prefix; see the language files for a complete list of available characters).
+Once sourced, international characters can be added to the keymap using, e.g., `&de_ae`,
+`&dk_ae`, `&el_alpha` or `&sv_ao` (each language has its own prefix; see the language
+files for a complete list of available characters).
 
 **Dependencies:** These definitions make use of unicode in the background,
 see the unicode section above for [prerequisites](#dependencies-for-unicode).
@@ -383,6 +384,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 ## Changelog
 
+* **11/16/2022:** Danish chars (added by [@zonique2k](https://github.com/zonique2k))
 * **11/09/2022:** Support for tri-state behavior (aka "swapper"), requires PR #1366
 * **10/16/2022:** Remove dependency on PR #1412 as it is now merged into main
 * **10/08/2022:** Remove depreciated masked-mods option from unicode helper
@@ -411,4 +413,5 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
     The default for macOS is `OS_UNICODE_LEAD` set to hold <kbd>Left Alt</kbd>
     and `OS_UNICODE_TRAIL` set to release <kbd>Left Alt</kbd>.
 
-[^3]: Swedish language support was added by discord user "captainwoot".
+[^3]: Swedish language support was added by discord user "captainwoot". Danish language
+  support was added by [@zonique2k](https://github.com/zonique2k).
