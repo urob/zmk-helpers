@@ -1,0 +1,5 @@
+/* Danish letters */
+ZMK_UNICODE_PAIR(dk_ae,   N0, N0,  E, N6,   N0, N0,  C, N6) // æ/Æ
+ZMK_UNICODE_PAIR(dk_oe,   N0, N0,  F, N8,   N0, N0,  D, N8) // ø/Ø
+ZMK_UNICODE_PAIR(dk_aa,   N0, N0,  E, N5,   N0, N0,  C, N5) // å/Å
+
