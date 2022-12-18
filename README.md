@@ -108,7 +108,7 @@ This creates a "Windows sleep macro" that can be added to the keymap using `&win
 `ZMK_LAYER` adds new keymap layers to the configuration.
 
 **Syntax:** `ZMK_LAYER(name, layout)`
-* `name`: a unique identifier string chosen by the user (usually there is no reason to reference this elsewhere)
+* `name`: a unique identifier string chosen by the user (it will be displayed on keyboards with appropriately configured displays)
 * `layout`: the layout specification using the same syntax as the `bindings`
   property of the [ZMK keymap configuration](https://zmk.dev/docs/config/keymap)
 
@@ -384,6 +384,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 ## Changelog
 
+* **12/18/2022:** Use layer name as display label
 * **11/16/2022:** Danish chars (added by [@zonique2k](https://github.com/zonique2k))
 * **11/09/2022:** Support for tri-state behavior (aka "swapper"), requires PR #1366
 * **10/16/2022:** Remove dependency on PR #1412 as it is now merged into main

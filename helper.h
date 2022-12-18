@@ -37,7 +37,8 @@
     / { \
         keymap { \
             compatible = "zmk,keymap"; \
-            name { \
+            layer_ ## name { \
+                label = ZMK_HELPER_STRINGIFY(name); \
                 bindings = <layout>; \
             }; \
         }; \
