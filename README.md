@@ -107,10 +107,11 @@ This creates a "Windows sleep macro" that can be added to the keymap using `&win
 
 `ZMK_LAYER` adds new keymap layers to the configuration.
 
-**Syntax:** `ZMK_LAYER(name, layout)`
+**Syntax:** `ZMK_LAYER(name, layout, sensors)`
 * `name`: a unique identifier string chosen by the user (it will be displayed on keyboards with appropriately configured displays)
 * `layout`: the layout specification using the same syntax as the `bindings`
   property of the [ZMK keymap configuration](https://zmk.dev/docs/config/keymap)
+* `sensors` (optional): provides sensor-specification if specified
 
 Multiple layers can be added with repeated calls of `ZMK_LAYER`. They will be ordered
 in the same order in which they are created, with the first-specified layer being
@@ -136,7 +137,7 @@ ZMK_KEYMAP(default_layer,
 
 `ZMK_COMBO` defines new combos.
 
-**Syntax:** `ZMK_COMBO(name, bindings, keypos, layers)`
+**Syntax:** `ZMK_COMBO(name, bindings, keypos, layers, timeout)`
 * `name`: a unique identifier string chosen by the user (usually there is not reason to reference this elsewhere)
 * `binding`: the binding triggered by the combo (this can be any stock or previously defined behavior)
 * `keypos`: a list of 2 or more key positions that trigger the combo (e.g., `12
@@ -145,16 +146,20 @@ ZMK_KEYMAP(default_layer,
   See [below](#key-position-helpers) on how to use them.
 * `layers`: a list of layers for which the combo is active (e.g., `0 1` for the first
   two layers). If set to `ALL` the combo is active on all layers.
+* `timeout` (optional): combo timeout in ms. If omitted the timeout is set to the
+  global value of `COMBO_TERM`, which defaults to 30ms and can be overwritten by the
+  user as in the second example below.
 
-By default, the timeout for combos created with `ZMK_COMBO` is 30ms. If `COMBO_TERM` is
-reset prior to calling `ZMK_COMBO`, the new value of `COMBO_TERM` is used instead.
-Alternatively, one can use `ZMK_COMBO_ADV` which allows to specify the combo-timeout directly 
-as 5th argument.
+#### Example: escape combo
 
-Note: with older ZMK versions, using different combo-timeouts would result in keys
-getting stuck. If this is an issue, try updating to the latest ZMK version.
+```C++
+ZMK_COMBO(esc,  &kp ESC, 0 1, ALL, 25)
+```
+This creates an "escape" combo that is active on all layers and which is triggered when
+the 0th and 1st keys are
+pressed jointly within 25ms.
 
-#### Example: copy and paste combos
+#### Example: copy and paste combos (using global COMBO_TERM)
 
 ```C++
 #undef COMBO_TERM
@@ -162,9 +167,9 @@ getting stuck. If this is an issue, try updating to the latest ZMK version.
 ZMK_COMBO(copy,  &kp LC(C), 12 13, ALL)
 ZMK_COMBO(paste, &kp LC(V), 13 14, ALL)
 ```
-This sets the combo timeout to 50ms, and then creates two combos which both are 
-active on all layers. The first combo is triggered when the
-12th and 13th keys are pressed jointly within the `COMBO_TERM`, sending <kbd>Ctrl</kbd> + <kbd>C</kbd>. The
+This sets the global combo timeout to 50ms, and then creates two combos which both are
+active on all layers. The first combo is triggered when the 12th and 13th keys are
+pressed jointly within the `COMBO_TERM`, sending <kbd>Ctrl</kbd> + <kbd>C</kbd>. The
 second combo is triggered when the 13th and 14th keys are pressed jointly, sending
 <kbd>Ctrl</kbd> + <kbd>V</kbd>.
 
@@ -313,8 +318,8 @@ physical position of keys on the keyboard. This can be cumbersome and reduces
 portability of configuration files across keyboards with different layouts. 
 
 To increase portability and ease of use, this repo provides optional key-position
-helpers for some popular keyboard layouts (48-key boards such as Planck, 42-key
-boards such as Corne, 36-key boards and 34-key boards).
+helpers for some popular keyboard layouts (58-key boards such as Lily58, 48-key boards
+such as Planck, 42-key boards such as Corne, 36-key boards and 34-key boards).
 
 These key-position helpers provide a map from the physical key positions to human-readable shortcuts.
 All shortcuts are of the following form:
@@ -385,6 +390,10 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 ## Changelog
 
+* **1/3/2023:** Optional `TIMEOUT` argument for `ZMK_COMBO` subsuming the now
+  depreciated `ZMK_COMBO_ADV`
+* **1/2/2023:** Optional sensor-bindings argument to `ZMK_LAYER` + keypos definitions
+  for lily58 (added by [@laureyn](https://github.com/laureyn))
 * **12/28/2022:** French chars (added by [@artggd](https://github.com/artggd))
 * **12/18/2022:** Use layer name as display label
 * **11/16/2022:** Danish chars (added by [@zonique2k](https://github.com/zonique2k))
@@ -392,10 +401,8 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 * **10/16/2022:** Remove dependency on PR #1412 as it is now merged into main
 * **10/08/2022:** Remove depreciated masked-mods option from unicode helper
 * **9/11/2022:** Support for Windows-Alt-Codes
-* **8/05/2022:** New macro `ZMK_COMBO_ADV` for "advanced" combo setups. Compared to
-  `ZMK_COMBO`, it takes a `TIMEOUT` argument and can be customized via `COMBO_HOOK`. See
-  [my personal combo
-  setup](https://github.com/urob/zmk-config/blob/main/config/combos.dtsi) for examples.
+* **8/05/2022:** New macro `ZMK_COMBO_ADV` for "advanced" combo setups. **Note:**
+  depreciated as of 1/3/2023
 * **7/31/2022:** Switch unicode dependency from PR #1114 to
   [PR #1412](https://github.com/zmkfirmware/zmk/pull/1412)
 
