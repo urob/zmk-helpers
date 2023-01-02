@@ -6,6 +6,7 @@
  */
 
 #pragma once
+#define GET_MACRO(_1,_2,_3,NAME,...) NAME
 
 #define ZMK_HELPER_STRINGIFY(x) #x
 
@@ -32,14 +33,25 @@
     };
 
 /* ZMK_LAYER */
-
-#define ZMK_LAYER(name, layout) \
+#define ZMK_LAYER(...) GET_MACRO(__VA_ARGS__, ZMK_LAYER_3, ZMK_LAYER_2)(__VA_ARGS__)
+#define ZMK_LAYER_2(name, layout) \
     / { \
         keymap { \
             compatible = "zmk,keymap"; \
             layer_ ## name { \
                 label = ZMK_HELPER_STRINGIFY(name); \
                 bindings = <layout>; \
+            }; \
+        }; \
+    };
+#define ZMK_LAYER_3(name, layout, sensors) \
+    / { \
+        keymap { \
+            compatible = "zmk,keymap"; \
+            layer_ ## name { \
+                label = ZMK_HELPER_STRINGIFY(name); \
+                bindings = <layout>; \
+			    sensor-bindings = <sensors>; \
             }; \
         }; \
     };
