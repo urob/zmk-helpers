@@ -6,7 +6,6 @@
  */
 
 #pragma once
-#define GET_MACRO(_1,_2,_3,NAME,...) NAME
 
 #define ZMK_HELPER_STRINGIFY(x) #x
 
@@ -33,8 +32,10 @@
     };
 
 /* ZMK_LAYER */
-#define ZMK_LAYER(...) GET_MACRO(__VA_ARGS__, ZMK_LAYER_3, ZMK_LAYER_2)(__VA_ARGS__)
-#define ZMK_LAYER_2(name, layout) \
+
+#define MACRO_CHOOSER3(_1, _2, _3, FUNC,...) FUNC
+#define ZMK_LAYER(...) MACRO_CHOOSER3(__VA_ARGS__, ZMK_LAYER_3_ARGS, ZMK_LAYER_2_ARGS)(__VA_ARGS__)
+#define ZMK_LAYER_2_ARGS(name, layout) \
     / { \
         keymap { \
             compatible = "zmk,keymap"; \
@@ -44,14 +45,14 @@
             }; \
         }; \
     };
-#define ZMK_LAYER_3(name, layout, sensors) \
+#define ZMK_LAYER_3_ARGS(name, layout, sensors) \
     / { \
         keymap { \
             compatible = "zmk,keymap"; \
             layer_ ## name { \
                 label = ZMK_HELPER_STRINGIFY(name); \
                 bindings = <layout>; \
-			    sensor-bindings = <sensors>; \
+                sensor-bindings = <sensors>; \
             }; \
         }; \
     };
@@ -62,24 +63,15 @@
 #if !defined COMBO_TERM
     #define COMBO_TERM 30
 #endif
-
-#define ZMK_COMBO(name, combo_bindings, keypos, combo_layers) \
-    / { \
-        combos { \
-            compatible = "zmk,combos"; \
-            combo_ ## name { \
-                timeout-ms = <COMBO_TERM>; \
-                bindings = <combo_bindings>; \
-                key-positions = <keypos>; \
-                layers = <combo_layers>; \
-            }; \
-        }; \
-    };
-
 #if !defined COMBO_HOOK
     #define COMBO_HOOK
 #endif
-#define ZMK_COMBO_ADV(name, combo_bindings, keypos, combo_layers, combo_timeout) \
+
+#define MACRO_CHOOSER5(_1, _2, _3, _4, _5, FUNC,...) FUNC
+#define ZMK_COMBO(...) MACRO_CHOOSER5(__VA_ARGS__, ZMK_COMBO_5_ARGS, ZMK_COMBO_4_ARGS)(__VA_ARGS__)
+#define ZMK_COMBO_4_ARGS(name, combo_bindings, keypos, combo_layers) \
+    ZMK_COMBO_5_ARGS(name, combo_bindings, keypos, combo_layers, COMBO_TERM)
+#define ZMK_COMBO_5_ARGS(name, combo_bindings, keypos, combo_layers, combo_timeout) \
     / { \
         combos { \
             compatible = "zmk,combos"; \
