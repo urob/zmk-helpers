@@ -33,7 +33,7 @@
 
 /* ZMK_LAYER */
 
-#define MACRO_CHOOSER3(_1, _2, _3, FUNC,...) FUNC
+#define MACRO_CHOOSER3(_1, _2, _3, FUNC, ...) FUNC
 #define ZMK_LAYER(...) MACRO_CHOOSER3(__VA_ARGS__, ZMK_LAYER_3_ARGS, ZMK_LAYER_2_ARGS)(__VA_ARGS__)
 #define ZMK_LAYER_2_ARGS(name, layout) \
     / { \
@@ -67,7 +67,7 @@
     #define COMBO_HOOK
 #endif
 
-#define MACRO_CHOOSER5(_1, _2, _3, _4, _5, FUNC,...) FUNC
+#define MACRO_CHOOSER5(_1, _2, _3, _4, _5, FUNC, ...) FUNC
 #define ZMK_COMBO(...) MACRO_CHOOSER5(__VA_ARGS__, ZMK_COMBO_5_ARGS, ZMK_COMBO_4_ARGS)(__VA_ARGS__)
 #define ZMK_COMBO_4_ARGS(name, combo_bindings, keypos, combo_layers) \
     ZMK_COMBO_5_ARGS(name, combo_bindings, keypos, combo_layers, COMBO_TERM)
