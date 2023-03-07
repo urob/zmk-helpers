@@ -390,6 +390,8 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 ## Changelog
 
+* **3/7/2023:** Keypos definitions for 44-key boards like Jian/Jorne (added by 
+  [@alparo](https://github.com/alparo)) and for Kinesis Advantage 360 Pro
 * **1/3/2023:** Optional `TIMEOUT` argument for `ZMK_COMBO` subsuming the now
   depreciated `ZMK_COMBO_ADV`
 * **1/2/2023:** Optional sensor-bindings argument to `ZMK_LAYER` + keypos definitions
