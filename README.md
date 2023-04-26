@@ -283,7 +283,8 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
 * On Windows and macOS there are additional requirements for unicode input to work. On
   Windows, one must install [WinCompose](https://github.com/samhocevar/wincompose) for
   full support (or use Win-Alt-Codes for limited support in select software). On
-  macOS one must enable unicode input in the system preferences.
+  macOS one must enable unicode input in the system preferences, by selecting 
+  `Unicode Hex Input` as input source.
 
 ### International characters
 
