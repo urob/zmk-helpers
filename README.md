@@ -392,25 +392,33 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 ## Changelog
 
-* **4/23/2023:** Support for dynamic-macros, requires PR #1351 (added by 
+* **6/27/2023:** Support for parametrized macros (added by
+  [@JeffDess](https://github.com/JeffDess))
+* **6/4/2023:** Keypos definitions for Kyria and Hillside keyboards (added by
+  [@autoferrit](https://github.com/autoferrit))
+* **5/21/2023:** Keypos definitions for Sofle (added by
+  [@titus-ong](https://github.com/titus-ong))
+* **4/23/2023:** Support for dynamic-macros, requires PR #1351 (added by
   [@theol0403](https://github.com/theol0403))
-* **3/7/2023:** Keypos definitions for 44-key boards like Jian/Jorne (added by 
-  [@alparo](https://github.com/alparo)) and for Kinesis Advantage 360 Pro
+* **3/7/2023:** Keypos definitions for 44-key boards like Jian/Jorne (added by
+  [@alparo](https://github.com/alparo)) and for Kinesis Adv 360 Pro
 * **1/3/2023:** Optional `TIMEOUT` argument for `ZMK_COMBO` subsuming the now
   depreciated `ZMK_COMBO_ADV`
-* **1/2/2023:** Optional sensor-bindings argument to `ZMK_LAYER` + keypos definitions
-  for lily58 (added by [@laureyn](https://github.com/laureyn))
+* **1/2/2023:** Optional sensor-bindings argument to `ZMK_LAYER` + keypos
+  definitions for lily58 (added by [@laureyn](https://github.com/laureyn))
 * **12/28/2022:** French chars (added by [@artggd](https://github.com/artggd))
 * **12/18/2022:** Use layer name as display label
-* **11/16/2022:** Danish chars (added by [@zonique2k](https://github.com/zonique2k))
-* **11/09/2022:** Support for tri-state behavior (aka "swapper"), requires PR #1366
+* **11/16/2022:** Danish chars (added by
+  [@zonique2k](https://github.com/zonique2k))
+* **11/09/2022:** Support for tri-state behavior (aka "swapper"), requires PR
+  #1366
 * **10/16/2022:** Remove dependency on PR #1412 as it is now merged into main
 * **10/08/2022:** Remove depreciated masked-mods option from unicode helper
 * **9/11/2022:** Support for Windows-Alt-Codes
-* **8/05/2022:** New macro `ZMK_COMBO_ADV` for "advanced" combo setups. **Note:**
-  depreciated as of 1/3/2023
-* **7/31/2022:** Switch unicode dependency from PR #1114 to
-  [PR #1412](https://github.com/zmkfirmware/zmk/pull/1412)
+* **8/5/2022:** New macro `ZMK_COMBO_ADV` for "advanced" combo setups.
+  **Note:** depreciated as of 1/3/2023
+* **7/31/2022:** Switch unicode dependency from PR #1114 to [PR
+  #1412](https://github.com/zmkfirmware/zmk/pull/1412)
 
 [^1]: If building with Github Actions, using submodules requires replacing
   `.github/workflows/build.yml` in the local `zmk-config` with
