@@ -58,8 +58,9 @@ hold-tap, key-repeat, macro, mod-morph, sticky-key, tap-dance or tri-state.
 * `name`: a unique string chosen by the user (e.g., `my_behavior`). The new behavior can
   be added to the keymap using `&name` (e.g., `&my_behavior`).
 * `type`: the behavior to be created. It must be one of the following:
-  `caps_word`, `hold_tap`, `key_repeat`, `macro`, `mod_morph`, `sticky_key`,
-  `tap_dance` or `tri_state`. Note that multiword behaviors are separated by underscores (`_`).
+  `caps_word`, `hold_tap`, `key_repeat`, `macro`, `macro_one_param`,
+  `macro_two_param`, `mod_morph`, `sticky_key`, `tap_dance` or `tri_state`.
+  Note that multiword behaviors are separated by underscores (`_`).
 * `specification`: the custom behavior code. It should contain the
   body of the corresponding [ZMK behavior configuration](https://zmk.dev/docs/config/behaviors)
   without the `label`, `#binding-cells` and `compatible` properties and without the
