@@ -14,6 +14,18 @@
 
 #pragma once
 
+/*
+ * Convenience macro allowing for layer definitions in a key arrangement like
+ * the above key matrix. See https://github.com/urob/zmk-nodefree-config/pull/22
+ * for a template. (Mind the commas!)
+ *
+ * Note that this file needs to be sourced *after* helper.h so that ZMK_LAYER is
+ * already defined.
+ */
+
+#define GLV80_LAYER(name, start, mid, end, thumb_row_1, thumb_row_2) \
+  ZMK_LAYER(name, start thumb_row_1 mid thumb_row_2 end)
+
 #define LC1  4  // left-ceiling row
 #define LC2  3
 #define LC3  2
