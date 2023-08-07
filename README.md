@@ -392,6 +392,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 ## Changelog
 
+* **8/7/2023:** Keypos definition for Glove 80 (added by [@hylophile](https://github.com/hylophile))
 * **6/27/2023:** Support for parametrized macros (added by
   [@JeffDess](https://github.com/JeffDess))
 * **6/4/2023:** Keypos definitions for Kyria and Hillside keyboards (added by
@@ -413,7 +414,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 * **11/09/2022:** Support for tri-state behavior (aka "swapper"), requires PR
   #1366
 * **10/16/2022:** Remove dependency on PR #1412 as it is now merged into main
-* **10/08/2022:** Remove depreciated masked-mods option from unicode helper
+* **10/8/2022:** Remove depreciated masked-mods option from unicode helper
 * **9/11/2022:** Support for Windows-Alt-Codes
 * **8/5/2022:** New macro `ZMK_COMBO_ADV` for "advanced" combo setups.
   **Note:** depreciated as of 1/3/2023
