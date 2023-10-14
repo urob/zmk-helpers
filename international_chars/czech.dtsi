@@ -1,0 +1,16 @@
+/* Czech letters */
+ZMK_UNICODE_PAIR(cs_ec,		N0, N1, N1,  B,		N0, N1, N1,  A) // ě/Ě
+ZMK_UNICODE_PAIR(cs_sc,		N0, N1, N6, N1,		N0, N1, N6, N0) // š/Š
+ZMK_UNICODE_PAIR(cs_cc,		N0, N1, N0,  D,		N0, N1, N0,  C) // č/Č
+ZMK_UNICODE_PAIR(cs_rc,		N0, N1, N5, N9,		N0, N1, N5, N8) // ř/Ř
+ZMK_UNICODE_PAIR(cs_zc,		N0, N1, N7,  E,		N0, N1, N7,  D) // ž/Ž
+ZMK_UNICODE_PAIR(cs_ya,		N0, N0,  F,  D,		N0, N0,  D,  D) // ý/Ý
+ZMK_UNICODE_PAIR(cs_aa,		N0, N0,  E, N1,		N0, N0,  C, N1) // á/Á
+ZMK_UNICODE_PAIR(cs_ia,		N0, N0,  E,  D,		N0, N0,  C,  D) // í/Í
+ZMK_UNICODE_PAIR(cs_ea,		N0, N0,  E, N9,		N0, N0,  C, N9) // é/É
+ZMK_UNICODE_PAIR(cs_oa,		N0, N0,  F, N3,		N0, N0,  D, N3) // ó/Ó
+ZMK_UNICODE_PAIR(cs_ur,		N0, N1, N6,  F,		N0, N1, N6,  E) // ů/Ů
+ZMK_UNICODE_PAIR(cs_ua,		N0, N0,  F,  A,		N0, N0,  D,  A) // ú/Ú
+ZMK_UNICODE_PAIR(cs_nc,		N0, N1, N4, N8,		N0, N1, N4, N7) // ň/Ň
+ZMK_UNICODE_PAIR(cs_dc,		N0, N1, N0,  F,		N0, N1, N0,  E) // ď/Ď
+ZMK_UNICODE_PAIR(cs_tc,		N0, N1, N6, N5,		N0, N1, N6, N4) // ť/Ť
