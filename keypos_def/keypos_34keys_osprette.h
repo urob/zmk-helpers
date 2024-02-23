@@ -31,7 +31,7 @@
 #define RM2 16
 #define RM3 17
 #define RM4 18
-#define RT4 19
+#define RM5 19
 
 #define LB0 24  // left-bottom row
 #define LB1 23
