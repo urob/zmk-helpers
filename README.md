@@ -63,7 +63,7 @@ hold-tap, key-repeat, macro, mod-morph, sticky-key, tap-dance or tri-state.
   Note that multiword behaviors are separated by underscores (`_`).
 * `specification`: the custom behavior code. It should contain the
   body of the corresponding [ZMK behavior configuration](https://zmk.dev/docs/config/behaviors)
-  without the `label`, `#binding-cells` and `compatible` properties and without the
+  without the `#binding-cells` and `compatible` properties and without the
   surrounding node-specification.
 
 #### Example 1: Creating a custom "homerow mod" tap-hold behavior

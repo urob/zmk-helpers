@@ -27,7 +27,6 @@
     / { \
         behaviors { \
             name: name { \
-                label = ZMK_HELPER_STRINGIFY(ZB_ ## name); \
                 ZMK_BEHAVIOR_CORE_ ## type; \
                 __VA_ARGS__ \
             }; \
@@ -38,22 +37,22 @@
 
 #define MACRO_CHOOSER3(_1, _2, _3, FUNC, ...) FUNC
 #define ZMK_LAYER(...) MACRO_CHOOSER3(__VA_ARGS__, ZMK_LAYER_3_ARGS, ZMK_LAYER_2_ARGS)(__VA_ARGS__)
-#define ZMK_LAYER_2_ARGS(name, layout) \
+#define ZMK_LAYER_2_ARGS(_name, layout) \
     / { \
         keymap { \
             compatible = "zmk,keymap"; \
-            layer_ ## name { \
-                label = ZMK_HELPER_STRINGIFY(name); \
+            layer_ ## _name { \
+                display-name = ZMK_HELPER_STRINGIFY(_name); \
                 bindings = <layout>; \
             }; \
         }; \
     };
-#define ZMK_LAYER_3_ARGS(name, layout, sensors) \
+#define ZMK_LAYER_3_ARGS(_name, layout, sensors) \
     / { \
         keymap { \
             compatible = "zmk,keymap"; \
-            layer_ ## name { \
-                label = ZMK_HELPER_STRINGIFY(name); \
+            layer_ ## _name { \
+                display-name = ZMK_HELPER_STRINGIFY(_name); \
                 bindings = <layout>; \
                 sensor-bindings = <sensors>; \
             }; \
@@ -127,7 +126,6 @@
         macros { \
             name: name { \
                 compatible = "zmk,behavior-macro"; \
-                label = ZMK_HELPER_STRINGIFY(UC_MACRO_ ## name); \
                 wait-ms = <0>; \
                 tap-ms = <0>; \
                 #binding-cells = <0>; \
@@ -141,7 +139,6 @@
         behaviors { \
             name: name { \
                 compatible = "zmk,behavior-mod-morph"; \
-                label = ZMK_HELPER_STRINGIFY(UC_MORPH_ ## name); \
                 #binding-cells = <0>; \
                 bindings = <uc_binding>, <shifted_uc_binding>; \
                 mods = <(MOD_LSFT|MOD_RSFT)>; \
