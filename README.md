@@ -137,18 +137,19 @@ ZMK_LAYER(default_layer,
 
 `ZMK_COMBO` defines new combos.
 
-**Syntax:** `ZMK_COMBO(name, bindings, keypos, layers, timeout)`
+**Syntax:** `ZMK_COMBO(name, bindings, keypos, layers, timeout, prior_idle, extra)`
 * `name`: a unique identifier string chosen by the user (usually there is not reason to reference this elsewhere)
 * `binding`: the binding triggered by the combo (this can be any stock or previously defined behavior)
 * `keypos`: a list of 2 or more key positions that trigger the combo (e.g., `12
   13`). Note that the mapping from key positions to keys depends on your keyboard. To facilitate 
   the combo setup and increase portability, one can use key-position helpers instead.
   See [below](#key-position-helpers) on how to use them.
-* `layers`: a list of layers for which the combo is active (e.g., `0 1` for the first
-  two layers). If set to `ALL` the combo is active on all layers.
-* `timeout` (optional): combo timeout in ms. If omitted the timeout is set to the
-  global value of `COMBO_TERM`, which defaults to 30ms and can be overwritten by the
-  user as in the second example below.
+* `layers` (optional): a list of layers for which the combo is active (e.g., `0 1` for the first
+  two layers). If set to `ALL` the combo is active on all layers. Defaults to `ALL`.
+* `timeout` (optional): combo timeout in ms. Defaults to the global `COMBO_TERM`, which in turn
+  defaults to 30ms.
+* `prior_idle` (optional): require-prior-idle timout in ms. Defaults to 0 (disabled).
+* `extra` (optional): additional configuration options (e.g., `slow-release;`)
 
 #### Example: escape combo
 
@@ -164,11 +165,11 @@ pressed jointly within 25ms.
 ```C++
 #undef COMBO_TERM
 #define COMBO_TERM 50
-ZMK_COMBO(copy,  &kp LC(C), 12 13, ALL)
-ZMK_COMBO(paste, &kp LC(V), 13 14, ALL)
+ZMK_COMBO(copy,  &kp LC(C), 12 13)
+ZMK_COMBO(paste, &kp LC(V), 13 14)
 ```
 This sets the global combo timeout to 50ms, and then creates two combos which both are
-active on all layers. The first combo is triggered when the 12th and 13th keys are
+active on all layers (the default). The first combo is triggered when the 12th and 13th keys are
 pressed jointly within the `COMBO_TERM`, sending <kbd>Ctrl</kbd> + <kbd>C</kbd>. The
 second combo is triggered when the 13th and 14th keys are pressed jointly, sending
 <kbd>Ctrl</kbd> + <kbd>V</kbd>.
