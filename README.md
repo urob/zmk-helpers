@@ -1,3 +1,10 @@
+> [!NOTE]
+>
+> This is Version 1 of `zmk-helpers` (formerly `zmk-nodefree-repo`). [Version
+> 2](https://github.com/urob/zmk-helpers/tree/v2) is currently under development and will eventually
+> become the `main` branch. The old main (this branch) will continue to be available as `v1`. See
+> [this discussion](https://github.com/urob/zmk-helpers/discussions/41) for more details.
+
 # zmk-nodefree-config
 
 ZMK lets user customize their keyboard layout by providing a Devicetree file
