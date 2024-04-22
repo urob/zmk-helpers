@@ -1,26 +1,36 @@
 /* Greek letters */
-ZMK_UNICODE_PAIR(el_alpha,     N0, N3,  B, N1,    N0, N3, N9, N1)
-ZMK_UNICODE_PAIR(el_beta,      N0, N3,  B, N2,    N0, N3, N9, N2)
-ZMK_UNICODE_PAIR(el_gamma,     N0, N3,  B, N3,    N0, N3, N9, N3)
-ZMK_UNICODE_PAIR(el_delta,     N0, N3,  B, N4,    N0, N3, N9, N4)
-ZMK_UNICODE_PAIR(el_epsilon,   N0, N3,  F, N5,    N0, N3, N9, N5)  // varepsilon = 03B5
-ZMK_UNICODE_PAIR(el_zeta,      N0, N3,  B, N6,    N0, N3, N9, N6)
-ZMK_UNICODE_PAIR(el_eta,       N0, N3,  B, N7,    N0, N3, N9, N7)
-ZMK_UNICODE_PAIR(el_theta,     N0, N3,  B, N8,    N0, N3, N9, N8)
-ZMK_UNICODE_PAIR(el_iota,      N0, N3,  B, N9,    N0, N3, N9, N9)
-ZMK_UNICODE_PAIR(el_kappa,     N0, N3,  B,  A,    N0, N3, N9,  A)
-ZMK_UNICODE_PAIR(el_lambda,    N0, N3,  B,  B,    N0, N3, N9,  B)
-ZMK_UNICODE_PAIR(el_mu,        N0, N3,  B,  C,    N0, N3, N9,  C)
-ZMK_UNICODE_PAIR(el_nu,        N0, N3,  B,  D,    N0, N3, N9,  D)
-ZMK_UNICODE_PAIR(el_xi,        N0, N3,  B,  E,    N0, N3, N9,  E)
-ZMK_UNICODE_PAIR(el_omikron,   N0, N3,  B,  F,    N0, N3, N9,  F)
-ZMK_UNICODE_PAIR(el_pi,        N0, N3,  C, N0,    N0, N3,  A, N0)
-ZMK_UNICODE_PAIR(el_rho,       N0, N3,  C, N1,    N0, N3,  A, N1)
-ZMK_UNICODE_PAIR(el_sigma,     N0, N3,  C, N3,    N0, N3,  A, N3)
-ZMK_UNICODE_PAIR(el_tau,       N0, N3,  C, N4,    N0, N3,  A, N4)
-ZMK_UNICODE_PAIR(el_upsilon,   N0, N3,  C, N5,    N0, N3,  A, N5)
-ZMK_UNICODE_PAIR(el_phi,       N0, N3,  C, N6,    N0, N3,  A, N6)  // varphi = 03C6
-ZMK_UNICODE_PAIR(el_chi,       N0, N3,  C, N7,    N0, N3,  A, N7)
-ZMK_UNICODE_PAIR(el_psi,       N0, N3,  C, N8,    N0, N3,  A, N8)
-ZMK_UNICODE_PAIR(el_omega,     N0, N3,  C, N9,    N0, N3,  A, N9)
 
+// Letter forms
+ZMK_UNICODE_PAIR(el_alpha,       N0, N3,  B, N1,    N0, N3, N9, N1) // α/Α
+ZMK_UNICODE_PAIR(el_beta,        N0, N3,  B, N2,    N0, N3, N9, N2) // β/Β
+ZMK_UNICODE_PAIR(el_gamma,       N0, N3,  B, N3,    N0, N3, N9, N3) // γ/Γ
+ZMK_UNICODE_PAIR(el_delta,       N0, N3,  B, N4,    N0, N3, N9, N4) // δ/Δ
+ZMK_UNICODE_PAIR(el_epsilon,     N0, N3,  B, N5,    N0, N3, N9, N5) // ε/Ε
+ZMK_UNICODE_PAIR(el_zeta,        N0, N3,  B, N6,    N0, N3, N9, N6) // ζ/Ζ
+ZMK_UNICODE_PAIR(el_eta,         N0, N3,  B, N7,    N0, N3, N9, N7) // η/Η
+ZMK_UNICODE_PAIR(el_theta,       N0, N3,  B, N8,    N0, N3, N9, N8) // θ/Θ
+ZMK_UNICODE_PAIR(el_iota,        N0, N3,  B, N9,    N0, N3, N9, N9) // ι/Ι
+ZMK_UNICODE_PAIR(el_kappa,       N0, N3,  B,  A,    N0, N3, N9,  A) // κ/Κ
+ZMK_UNICODE_PAIR(el_lambda,      N0, N3,  B,  B,    N0, N3, N9,  B) // λ/Λ
+ZMK_UNICODE_PAIR(el_mu,          N0, N3,  B,  C,    N0, N3, N9,  C) // μ/Μ
+ZMK_UNICODE_PAIR(el_nu,          N0, N3,  B,  D,    N0, N3, N9,  D) // ν/Ν
+ZMK_UNICODE_PAIR(el_xi,          N0, N3,  B,  E,    N0, N3, N9,  E) // ξ/Ξ
+ZMK_UNICODE_PAIR(el_omikron,     N0, N3,  B,  F,    N0, N3, N9,  F) // ο/Ο
+ZMK_UNICODE_PAIR(el_pi,          N0, N3,  C, N0,    N0, N3,  A, N0) // π/Π
+ZMK_UNICODE_PAIR(el_rho,         N0, N3,  C, N1,    N0, N3,  A, N1) // ρ/Ρ
+ZMK_UNICODE_PAIR(el_final_sigma, N0, N3,  C, N2,    N0, N3,  A, N3) // ς/Σ
+ZMK_UNICODE_PAIR(el_sigma,       N0, N3,  C, N3,    N0, N3,  A, N3) // σ/Σ
+ZMK_UNICODE_PAIR(el_tau,         N0, N3,  C, N4,    N0, N3,  A, N4) // τ/Τ
+ZMK_UNICODE_PAIR(el_upsilon,     N0, N3,  C, N5,    N0, N3,  A, N5) // υ/Υ
+ZMK_UNICODE_PAIR(el_phi,         N0, N3,  D, N5,    N0, N3,  A, N6) // φ/Φ
+ZMK_UNICODE_PAIR(el_chi,         N0, N3,  C, N7,    N0, N3,  A, N7) // χ/Χ
+ZMK_UNICODE_PAIR(el_psi,         N0, N3,  C, N8,    N0, N3,  A, N8) // ψ/Ψ
+ZMK_UNICODE_PAIR(el_omega,       N0, N3,  C, N9,    N0, N3,  A, N9) // ω/Ω
+
+// Symbol forms
+ZMK_UNICODE_PAIR(el_epsilon_sym, N0, N3,  F, N5,    N0, N3, N9, N5) // ϵ/Ε
+ZMK_UNICODE_PAIR(el_theta_sym,   N0, N3,  D, N1,    N0, N3, N9, N8) // ϑ/Θ
+ZMK_UNICODE_PAIR(el_kappa_sym,   N0, N3,  F, N0,    N0, N3, N9,  A) // ϰ/Κ
+ZMK_UNICODE_PAIR(el_pi_sym,      N0, N3,  D, N6,    N0, N3,  A, N9) // ϖ/Ω
+ZMK_UNICODE_PAIR(el_rho_sym,     N0, N3,  F, N1,    N0, N3,  A, N1) // ϱ/Ρ
+ZMK_UNICODE_PAIR(el_phi_sym,     N0, N3,  C, N6,    N0, N3,  A, N6) // φ/Φ
