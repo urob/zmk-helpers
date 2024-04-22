@@ -1,0 +1,36 @@
+/* Ukrainian letters */
+
+ZMK_UNICODE_PAIR(uk_a,              N0, N4, N3, N0,   N0, N4, N1, N0) // а/А
+ZMK_UNICODE_PAIR(uk_b,              N0, N4, N3, N1,   N0, N4, N1, N1) // б/Б
+ZMK_UNICODE_PAIR(uk_v,              N0, N4, N3, N2,   N0, N4, N1, N2) // в/В
+ZMK_UNICODE_PAIR(uk_h,              N0, N4, N3, N3,   N0, N4, N1, N3) // г/Г
+ZMK_UNICODE_PAIR(uk_g,              N0, N4, N9, N1,   N0, N4, N9, N0) // ґ/Ґ
+ZMK_UNICODE_PAIR(uk_d,              N0, N4, N3, N4,   N0, N4, N1, N4) // д/Д
+ZMK_UNICODE_PAIR(uk_e,              N0, N4, N3, N5,   N0, N4, N1, N5) // е/Е
+ZMK_UNICODE_PAIR(uk_ie,             N0, N4, N5, N4,   N0, N4, N0, N4) // є/Є
+ZMK_UNICODE_PAIR(uk_zh,             N0, N4, N3, N6,   N0, N4, N1, N6) // ж/Ж
+ZMK_UNICODE_PAIR(uk_z,              N0, N4, N3, N7,   N0, N4, N1, N7) // з/З
+ZMK_UNICODE_PAIR(uk_y,              N0, N4, N3, N8,   N0, N4, N1, N8) // и/И
+ZMK_UNICODE_PAIR(uk_i,              N0, N4, N5, N6,   N0, N4, N0, N6) // і/І
+ZMK_UNICODE_PAIR(uk_yi,             N0, N4, N5, N7,   N0, N4, N0, N7) // ї/Ї
+ZMK_UNICODE_PAIR(uk_i_short,        N0, N4, N3, N9,   N0, N4, N1, N9) // й/Й
+ZMK_UNICODE_PAIR(uk_k,              N0, N4, N3,  A,   N0, N4, N1,  A) // к/К
+ZMK_UNICODE_PAIR(uk_l,              N0, N4, N3,  B,   N0, N4, N1,  B) // л/Л
+ZMK_UNICODE_PAIR(uk_m,              N0, N4, N3,  C,   N0, N4, N1,  C) // м/М
+ZMK_UNICODE_PAIR(uk_n,              N0, N4, N3,  D,   N0, N4, N1,  D) // н/Н
+ZMK_UNICODE_PAIR(uk_o,              N0, N4, N3,  E,   N0, N4, N1,  E) // о/О
+ZMK_UNICODE_PAIR(uk_p,              N0, N4, N3,  F,   N0, N4, N1,  F) // п/П
+ZMK_UNICODE_PAIR(uk_r,              N0, N4, N4, N0,   N0, N4, N2, N0) // р/Р
+ZMK_UNICODE_PAIR(uk_s,              N0, N4, N4, N1,   N0, N4, N2, N1) // с/С
+ZMK_UNICODE_PAIR(uk_t,              N0, N4, N4, N2,   N0, N4, N2, N2) // т/Т
+ZMK_UNICODE_PAIR(uk_u,              N0, N4, N4, N3,   N0, N4, N2, N3) // у/У
+ZMK_UNICODE_PAIR(uk_f,              N0, N4, N4, N4,   N0, N4, N2, N4) // ф/Ф
+ZMK_UNICODE_PAIR(uk_kh,             N0, N4, N4, N5,   N0, N4, N2, N5) // х/Х
+ZMK_UNICODE_PAIR(uk_ts,             N0, N4, N4, N6,   N0, N4, N2, N6) // ц/Ц
+ZMK_UNICODE_PAIR(uk_ch,             N0, N4, N4, N7,   N0, N4, N2, N7) // ч/Ч
+ZMK_UNICODE_PAIR(uk_sh,             N0, N4, N4, N8,   N0, N4, N2, N8) // ш/Ш
+ZMK_UNICODE_PAIR(uk_sch,            N0, N4, N4, N9,   N0, N4, N2, N9) // щ/Щ
+ZMK_UNICODE_PAIR(uk_soft,           N0, N4, N4,  C,   N0, N4, N2,  C) // ь/Ь
+ZMK_UNICODE_PAIR(uk_yu,             N0, N4, N4,  E,   N0, N4, N2,  E) // ю/Ю
+ZMK_UNICODE_PAIR(uk_ya,             N0, N4, N4,  F,   N0, N4, N2,  F) // я/Я
+ZMK_UNICODE_SINGLE(uk_apostrophe,   N0, N2,  B,  C)                   // '
