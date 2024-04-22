@@ -445,6 +445,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 ## Changelog
 
+- **21/04/2024:** Currency Chars (added by [@saitamandl](https://github.com/saitamandl))
 - **4/16/2024:** Refactor `ZMK_COMBO` (this depreciates `COMBO_HOOK`)
 - **4/8/2024:** Update for Zephyr 3.5 (added by
   [@bryanforbes](https://github.com/bryanforbes))
