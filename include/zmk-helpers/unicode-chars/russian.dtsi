@@ -1,3 +1,5 @@
+/* Russian letters */
+
 // Common Letters
 ZMK_UNICODE_PAIR(ru_a    ,    N0 , N4 , N3 , N0 ,    N0 , N4 , N1 , N0) // а/А
 ZMK_UNICODE_PAIR(ru_b    ,    N0 , N4 , N3 , N1 ,    N0 , N4 , N1 , N1) // б/Б

@@ -1,4 +1,5 @@
 /* Currency*/
+
 ZMK_UNICODE_SINGLE(curr_dollar, N0, N0, N2, N4)  // $ (Dollar)
 ZMK_UNICODE_SINGLE(curr_cent, N0, N0, A, N2)  // ¢ (Cent)
 ZMK_UNICODE_SINGLE(curr_pound, N0, N0, A, N3)  // £ (Pound)
