@@ -1,0 +1,4 @@
+name: zmk-helpers
+build:
+    settings:
+        dts_root: .
