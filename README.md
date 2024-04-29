@@ -88,30 +88,30 @@ demonstration.
 The `helper.h` header provides a number of convenience macros for defining behaviors, combos,
 layers, etc.
 
-| Macro                     | Purpose                                             |
-| ------------------------- | --------------------------------------------------- |
-| [`ZMK_BEHAVIOR`]          | Creates a new behavior instance (generic form)      |
-| [`ZMK_COMBO`]             | Creates combos                                      |
-| [`ZMK_CONDITIONAl_LAYER`] | Creates `tri-layer` conditions                      |
-| [`ZMK_LAYER`]             | Creates layers and adds them to the keymap          |
-| [`ZMK_UNICODE_SINGLE`]    | Creates a unicode-char                              |
-| [`ZMK_UNICODE_PAIR`]      | Creates a pair of lowercase/uppercase unicode-chars |
+| Macro                     | Purpose                                            |
+| ------------------------- | -------------------------------------------------- |
+| [`ZMK_BEHAVIOR`]          | Create a new behavior instance (generic form)      |
+| [`ZMK_COMBO`]             | Create a combo                                     |
+| [`ZMK_CONDITIONAl_LAYER`] | Create a `tri-layer` condition                     |
+| [`ZMK_LAYER`]             | Create a layer and add it to the keymap            |
+| [`ZMK_UNICODE_SINGLE`]    | Create a unicode-char                              |
+| [`ZMK_UNICODE_PAIR`]      | Create a pair of lowercase/uppercase unicode-chars |
 
 In addition to the generic `ZMK_BEHAVIOR` macro, version 2 also provides the following explicit
 variants.
 
-| Macro                   | Purpose                                                        |
-| ----------------------- | -------------------------------------------------------------- |
-| [`ZMK_CAPS_WORD`]       | Creates a new `caps-word` behavior instance                    |
-| [`ZMK_HOLD_TAP`]        | Creates a new `hold-tap` behavior instance                     |
-| [`ZMK_KEY_REPEAT`]      | Creates a new `key-repeat` behavior instance                   |
-| [`ZMK_MACRO`]           | Creates a new `key-macro` behavior instance                    |
-| [`ZMK_MACRO_ONE_PARAM`] | Creates a new `macro-one-param` behavior instance              |
-| [`ZMK_MACRO_TWO_PARAM`] | Creates a new `macro-two-param` behavior instance              |
-| [`ZMK_MOD_MORPH`]       | Creates a new `mod-morph` behavior instance                    |
-| [`ZMK_STICKY_KEY`]      | Creates a new `sticky-key` behavior instance                   |
-| [`ZMK_TAP_DANCE`]       | Creates a new `tap-dance` behavior instance                    |
-| [`ZMK_TRI_STATE`]       | Creates a new `tri-state` behavior instance (requires [#1366]) |
+| Macro                   | Purpose                                                       |
+| ----------------------- | ------------------------------------------------------------- |
+| [`ZMK_CAPS_WORD`]       | Create a new `caps-word` behavior instance                    |
+| [`ZMK_HOLD_TAP`]        | Create a new `hold-tap` behavior instance                     |
+| [`ZMK_KEY_REPEAT`]      | Create a new `key-repeat` behavior instance                   |
+| [`ZMK_MACRO`]           | Create a new `key-macro` behavior instance                    |
+| [`ZMK_MACRO_ONE_PARAM`] | Create a new `macro-one-param` behavior instance              |
+| [`ZMK_MACRO_TWO_PARAM`] | Create a new `macro-two-param` behavior instance              |
+| [`ZMK_MOD_MORPH`]       | Create a new `mod-morph` behavior instance                    |
+| [`ZMK_STICKY_KEY`]      | Create a new `sticky-key` behavior instance                   |
+| [`ZMK_TAP_DANCE`]       | Create a new `tap-dance` behavior instance                    |
+| [`ZMK_TRI_STATE`]       | Create a new `tri-state` behavior instance (requires [#1366]) |
 
 The explicit behavior helpers are inspired by the native ZMK implementation of `ZMK_MACRO`. They
 differ in that they automatically create all Devicetree nodes as needed. So instead of calling them
@@ -221,8 +221,8 @@ language files. For example:
 Contributions of any form are very welcome! New `key-labels` and `unicode-chars` should follow these
 guidelines:
 
-- Key-position labels should stick to the [label conventions](docs/key_labels.md#standardization) whenever
-  applicable.
+- Key-position labels should stick to the [label conventions](docs/key_labels.md#standardization)
+  whenever applicable.
 - Language headers should namespace all characters using
   [two-letter ISO language codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).
 
