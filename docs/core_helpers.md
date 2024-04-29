@@ -2,6 +2,7 @@
 
 - [`ZMK_BEHAVIOR`](#zmk_behavior)
 - [`ZMK_BEHAVIOR` (explicit variants)](<#zmk_behavior-(explicit-variants)>)
+- [`ZMK_APPLY_MATRIX_TRANSFORM`](#zmk_apply_matrix_transform)
 - [`ZMK_COMBO`](#zmk_combo)
 - [`ZMK_CONDITIONAL_LAYER`](#zmk_conditional_layer)
 - [`ZMK_LAYER`](#zmk_layer)
@@ -73,6 +74,24 @@ Instead of using `ZMK_BEHAVIOR(name, type, specification)`, each behavior `type`
 explicit variant accessible under `ZMK_type(name, specification)`.
 
 For instance, `ZMK_MOD_MORPH(name, ...)` is equivalent to `ZMK_BEHAVIOR(name, mod_morph, ...)`.
+
+## ZMK_APPLY_MATRIX_TRANSFORM
+
+### Synopsis
+
+`ZMK_APPLY_MATRIX_TRANSFORM(transform)`
+
+Apply a non-default matrix transform to the keymap.
+
+- `transform`: node name of a valid `matrix_transform` without the leading `&`
+
+### Example
+
+This applies the `five_column_transform` on a Corne that has the last columns snapped off.
+
+```c
+ZMK_APPLY_MATRIX_TRANSFORM(five_column_transform)
+```
 
 ## ZMK_COMBO
 

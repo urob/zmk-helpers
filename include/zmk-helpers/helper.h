@@ -176,3 +176,9 @@
     UC_MACRO(name ## _upper, &kp U0 &kp U1 &kp U2 &kp U3) \
     UC_MODMORPH(name, &name ## _lower, &name ## _upper)
 
+/* ZMK_APPLY_MATRIX_TRANSFORM */
+
+#define ZMK_APPLY_MATRIX_TRANSFORM(transform) \
+    / { \
+        chosen { zmk,matrix_transform = &transform; }; \
+    };

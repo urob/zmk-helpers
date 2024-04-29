@@ -88,14 +88,15 @@ demonstration.
 The `helper.h` header provides a number of convenience macros for defining behaviors, combos,
 layers, etc.
 
-| Macro                     | Purpose                                            |
-| ------------------------- | -------------------------------------------------- |
-| [`ZMK_BEHAVIOR`]          | Create a new behavior instance (generic form)      |
-| [`ZMK_COMBO`]             | Create a combo                                     |
-| [`ZMK_CONDITIONAl_LAYER`] | Create a `tri-layer` condition                     |
-| [`ZMK_LAYER`]             | Create a layer and add it to the keymap            |
-| [`ZMK_UNICODE_SINGLE`]    | Create a unicode-char                              |
-| [`ZMK_UNICODE_PAIR`]      | Create a pair of lowercase/uppercase unicode-chars |
+| Macro                          | Purpose                                            |
+| ------------------------------ | -------------------------------------------------- |
+| [`ZMK_BEHAVIOR`]               | Create a new behavior instance (generic form)      |
+| [`ZMK_APPLY_MATRIX_TRANSFORM`] | Apply a `matrix_transform`                         |
+| [`ZMK_COMBO`]                  | Create a combo                                     |
+| [`ZMK_CONDITIONAl_LAYER`]      | Create a `tri-layer` condition                     |
+| [`ZMK_LAYER`]                  | Create a layer and add it to the keymap            |
+| [`ZMK_UNICODE_SINGLE`]         | Create a unicode-char                              |
+| [`ZMK_UNICODE_PAIR`]           | Create a pair of lowercase/uppercase unicode-chars |
 
 In addition to the generic `ZMK_BEHAVIOR` macro, version 2 also provides the following explicit
 variants.
@@ -228,6 +229,7 @@ guidelines:
 
 [#1366]: https://github.com/zmkfirmware/zmk/pull/1366
 [`ZMK_BEHAVIOR`]: docs/core_helpers.md#zmk_behavior
+[`ZMK_APPLY_MATRIX_TRANSFORM`]: docs/core_helpers.md#apply_matrix_transform
 [`ZMK_COMBO`]: docs/core_helpers.md#zmk_combo
 [`ZMK_CONDITIONAL_LAYER`]: docs/core_helpers.md#zmk_conditional_layer
 [`ZMK_LAYER`]: docs/core_helpers.md#zmk_layer
