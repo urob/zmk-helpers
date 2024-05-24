@@ -1,12 +1,12 @@
 1. Remove the v1 `zmk-nodefree-config` folder from your `zmk-config`
 2. Add the new Zephyr Module (recommended) or manually copy `include/zmk-helpers` into
-   `zmk-config/config/` (see [installation instructions](../readme.md#installation))
+   `zmk-config/config/` (see [installation instructions](../README.md#installation))
 3. Fix `#include paths`:
 
    1. replace the root-path `../zmk-nodefree-config/` with `zmk-helpers/`
    2. replace the sub-path `keypos_def/` with `key-labels/`
    3. replace the sub-path `international_chars/` with `unicode-chars/`
-   4. rename key-position headers as [needed](../readme.md#key-labels-collection) (e.g.,
+   4. rename key-position headers as [needed](../README.md#key-labels-collection) (e.g.,
       `keypos_34keys.h` becomes `34.h`)
 
    For example:
