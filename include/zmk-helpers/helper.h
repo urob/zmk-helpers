@@ -5,8 +5,6 @@
  * See https://github.com/urob/zmk-helpers for documentation.
  */
 
-#pragma once
-
 #define ZMK_HELPER_STRINGIFY(x) #x
 
 // Preprocessor mechanism to overload macros, cf. https://stackoverflow.com/a/27051616/6114651
