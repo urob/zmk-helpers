@@ -75,6 +75,12 @@ explicit variant accessible under `ZMK_type(name, specification)`.
 
 For instance, `ZMK_MOD_MORPH(name, ...)` is equivalent to `ZMK_BEHAVIOR(name, mod_morph, ...)`.
 
+> [!NOTE]
+>
+> By default, sourcing `helper.h` will replace the native implementation of `ZMK_MACRO`. To work
+> reliably, `helper.h` should be included _after_ `behaviors.dtsi`. To keep the native
+> implementation of `ZMK_MACRO`, set `#define ZMK_HELPER_KEEP_NATIVE 1` before including `helper.h`.
+
 ## ZMK_APPLY_MATRIX_TRANSFORM
 
 ### Synopsis

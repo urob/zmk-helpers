@@ -120,8 +120,9 @@ from inside the Devicetree, they should be placed outside the root node.
 
 > [!NOTE]
 >
-> By default, sourcing `helper.h` will replace the native `ZMK_MACRO`. This can be disabled by
-> setting `#define ZMK_HELPER_KEEP_NATIVE 1"` before sourcing `helper.h`.
+> By default, sourcing `helper.h` will replace the native implementation of `ZMK_MACRO`. To work
+> reliably, `helper.h` should be included _after_ `behaviors.dtsi`. To keep the native
+> implementation of `ZMK_MACRO`, set `#define ZMK_HELPER_KEEP_NATIVE 1` before including `helper.h`.
 
 ### Key-labels collection
 
