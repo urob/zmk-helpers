@@ -1,14 +1,9 @@
 # ZMK-Helpers (Version 2)
 
-> [!NOTE]
->
-> Version 2 is still early-stage and there will likely be breaking changes in the near future. See
-> [this discussion](https://github.com/urob/zmk-helpers/discussions/41) for more details. Feedback
-> and suggestions for the transition and about the new branch are very welcome.
-
 This is a collection of helper macros (formerly `zmk-nodefree-config`), simplifying the
 configuration of ZMK keymaps. The [migration guide](docs/migration-to-v2.md) has instructions on how
-to migrate from v1.
+to migrate from v1. Version 1 continuous to be available
+[here](https://github.com/urob/zmk-helpers/tree/v1).
 
 ## Installation
 
@@ -29,7 +24,7 @@ manifest:
       import: app/west.yml
     - name: zmk-helpers
       remote: urob
-      revision: v2 # this will eventually become main
+      revision: main
   self:
     path: config
 ```
