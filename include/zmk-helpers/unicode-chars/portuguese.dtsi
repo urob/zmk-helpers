@@ -1,0 +1,14 @@
+/* Portuguese letters */
+
+ZMK_UNICODE_PAIR(pt_a_grave,        N0, N0, E, N0,   N0, N0, C, N0)  // à/À
+ZMK_UNICODE_PAIR(pt_a_circumflex,   N0, N0, E, N2,   N0, N0, C, N2)  // â/Â
+ZMK_UNICODE_PAIR(pt_c_cedilla,      N0, N0, E, N7,   N0, N0, C, N7)  // ç/Ç
+ZMK_UNICODE_PAIR(pt_e_grave,        N0, N0, E, N8,   N0, N0, C, N8)  // è/È
+ZMK_UNICODE_PAIR(pt_e_acute,        N0, N0, E, N9,   N0, N0, C, N9)  // é/É
+ZMK_UNICODE_PAIR(pt_e_circumflex,   N0, N0, E, A,    N0, N0, C, A)   // ê/Ê
+ZMK_UNICODE_PAIR(pt_o_circumflex,   N0, N0, F, N4,   N0, N0, D, N4)  // ô/Ô
+ZMK_UNICODE_PAIR(pt_oa,             N0, N0,  F, N3,  N0, N0,  D, N3) // ó/Ó
+ZMK_UNICODE_PAIR(pt_u_grave,        N0, N0, F, N9,   N0, N0, D, N9)  // ù/Ù
+ZMK_UNICODE_PAIR(pt_u_circumflex,   N0, N0, F, B,    N0, N0, D, B)   // û/Û
+ZMK_UNICODE_PAIR(pt_a_tilde,        N0, N0, E, N3,   N0, N0,  C, N3) // ã/Ã
+ZMK_UNICODE_PAIR(pt_aa,             N0, N0,  E, N1,  N0, N0,  C, N1) // á/Á
