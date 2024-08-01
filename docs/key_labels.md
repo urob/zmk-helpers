@@ -38,10 +38,10 @@ Whenever reasonably possible, all layout definitions should follow these rules:
 ### <`column`>-tag rules
 
 8. Columns are numbered from the inside to the outside
-9. The 5-core columns (where the alpha keys usually go) are numbered `0` to `4`, with `1` being the
+9. The 5 core columns (where the alpha keys usually go) are numbered `0` to `4`, with `1` being the
    homing position of the index finger
 10. Thumbs are numbered so that the homing position is between `0` and `1`
-11. Encoder-rows may omit the column number if uniqly identified by `<side>` and `<row>`
+11. Encoder-rows may omit the column number if uniquely identified by `<side>` and `<row>`
 
 For instance, the labels for the 60-key _Sofle_ and the 34-key _Sweep_ are defined as follows:
 
