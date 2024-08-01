@@ -98,6 +98,7 @@ variants.
 
 | Macro                   | Purpose                                                       |
 | ----------------------- | ------------------------------------------------------------- |
+| [`ZMK_AUTO_LAYER`]      | Create a new `auto-layer` behavior instance                   |
 | [`ZMK_CAPS_WORD`]       | Create a new `caps-word` behavior instance                    |
 | [`ZMK_HOLD_TAP`]        | Create a new `hold-tap` behavior instance                     |
 | [`ZMK_KEY_REPEAT`]      | Create a new `key-repeat` behavior instance                   |
@@ -231,6 +232,7 @@ guidelines:
 [`ZMK_LAYER`]: docs/core_helpers.md#zmk_layer
 [`ZMK_UNICODE_SINGLE`]: docs/core_helpers.md#zmk_unicode
 [`ZMK_UNICODE_PAIR`]: docs/core_helpers.md#zmk_unicode
+[`ZMK_AUTO_LAYER`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_CAPS_WORD`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_HOLD_TAP`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_KEY_REPEAT`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
