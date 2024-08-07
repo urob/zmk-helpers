@@ -1,0 +1,6 @@
+/* Faroese letters */
+
+ZMK_UNICODE_PAIR(fo_eth,  N0, N0,  F, N0,   N0, N0,  D, N0) // ð/Ð
+ZMK_UNICODE_PAIR(fo_ae,   N0, N0,  E, N6,   N0, N0,  C, N6) // æ/Æ
+ZMK_UNICODE_PAIR(fo_oe,   N0, N0,  F, N8,   N0, N0,  D, N8) // ø/Ø
+ZMK_UNICODE_PAIR(fo_aa,   N0, N0,  E, N5,   N0, N0,  C, N5) // å/Å
