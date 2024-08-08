@@ -74,7 +74,7 @@ Source `helper.h` near the top of your `.keymap` file. Optionally, source `key-l
 ```
 
 The following subsections describe the available helpers. See the
-[example configuration](example/zmk-config/config/cradio.keymap) or my
+[example configuration](examples/zmk-config/config/cradio.keymap) or my
 [personal zmk-config](https://github.com/urob/zmk-config/blob/main/config/base.keymap) for a
 demonstration.
 
