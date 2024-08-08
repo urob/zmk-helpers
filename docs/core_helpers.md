@@ -173,7 +173,7 @@ ZMK_CONDITIONAL_LAYER(its_magic, 1 2, 3)
 ```
 
 Mind that ZMK's layer numbering starts at 0. One can use layer definitions, as demonstrated in this
-[../example/zmk-config/config/cradio.keymap](example), to simplify life.
+[example](../examples/zmk-config/config/cradio.keymap), to simplify life.
 
 ## ZMK_LAYER
 
