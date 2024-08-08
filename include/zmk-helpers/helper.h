@@ -113,11 +113,11 @@
 
 /* ZMK_CONDITIONAL_LAYER */
 
-#define ZMK_CONDITIONAL_LAYER(if_layers, then_layer) \
+#define ZMK_CONDITIONAL_LAYER(name, if_layers, then_layer) \
     / { \
         conditional_layers { \
             compatible = "zmk,conditional-layers"; \
-            tri_layer { \
+            tri_layer_ ## name { \
                 if-layers = <if_layers>; \
                 then-layer = <then_layer>; \
             }; \

@@ -24,4 +24,6 @@
    ```
 
 4. Change prefix of Danish unicode characters from `dk_` to the ISO language code `da_`
-5. (optional) replace `ZMK_BEHAVIOR` with explicit behavior helpers
+5. Add identifier string to `ZMK_CONDITIONAL_LAYER`
+   ([new syntax](core_helpers.md#zmk_conditional_layer))
+6. (optional) replace `ZMK_BEHAVIOR` with explicit behavior helpers

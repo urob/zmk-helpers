@@ -154,11 +154,12 @@ ZMK_COMBO(paste, &kp LC(V), LB1 LB2)
 
 ### Synopsis
 
-`ZMK_CONDITIONAL_LAYER(if_layers, then_layers)`
+`ZMK_CONDITIONAL_LAYER(name, if_layers, then_layer)`
 
 Set up a `tri-layer` condition, which activates `then_layer` if all layers in `if_layers` are
 active.
 
+- `name`: a unique identifier string
 - `if_layers`: a list of layers which trigger the `then_layer` if simultaneously active
 - `then_layer`: the layer which is activated when the if-condition is met. Due to ZMK's layering
   model, it should generally have a higher number than the `if_layers`
@@ -168,7 +169,7 @@ active.
 This triggers "layer 3" if layers "1" and "2" are simultaneously active.
 
 ```C++
-ZMK_CONDITIONAL_LAYER(1 2, 3)
+ZMK_CONDITIONAL_LAYER(its_magic, 1 2, 3)
 ```
 
 Mind that ZMK's layer numbering starts at 0. One can use layer definitions, as demonstrated in this
