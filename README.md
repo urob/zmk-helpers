@@ -138,6 +138,7 @@ The following layouts are currently implemented.
 | `36.h`                  | 36               | Corne (5 cols), Corne-ish Zen (5 cols)     |
 | `42.h`                  | 42               | Corne, Corne-ish Zen                       |
 | `4x12.h`, `4x12_wide.h` | 48               | Planck                                     |
+| `5x6.h`                 | 60               | Caldera                                    |
 | `adv360_custom.h`       | 76               | Advantage360 Pro (custom matrix transform) |
 | `glove80.h`             | 80               | Glove80                                    |
 | `hillside_*.h`          | 46, 48, 52 or 56 | Hillside family                            |
