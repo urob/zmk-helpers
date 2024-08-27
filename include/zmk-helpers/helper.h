@@ -21,6 +21,7 @@
 #define ZMK_BEHAVIOR_CORE_caps_word       compatible = "zmk,behavior-caps-word";       #binding-cells = <0>
 #define ZMK_BEHAVIOR_CORE_dynamic_macro   compatible = "zmk,behavior-dynamic-macro";   #binding-cells = <1>
 #define ZMK_BEHAVIOR_CORE_hold_tap        compatible = "zmk,behavior-hold-tap";        #binding-cells = <2>
+#define ZMK_BEHAVIOR_CORE_mod_tap         compatible = "zmk,behavior-mod-tap";         #binding-cells = <2>
 #define ZMK_BEHAVIOR_CORE_key_repeat      compatible = "zmk,behavior-key-repeat";      #binding-cells = <0>
 #define ZMK_BEHAVIOR_CORE_macro           compatible = "zmk,behavior-macro";           #binding-cells = <0>
 #define ZMK_BEHAVIOR_CORE_macro_one_param compatible = "zmk,behavior-macro-one-param"; #binding-cells = <1>
@@ -43,6 +44,7 @@
 #define ZMK_AUTO_LAYER(name, ...) ZMK_BEHAVIOR(name, auto_layer, __VA_ARGS__)
 #define ZMK_CAPS_WORD(name, ...) ZMK_BEHAVIOR(name, caps_word, __VA_ARGS__)
 #define ZMK_HOLD_TAP(name, ...) ZMK_BEHAVIOR(name, hold_tap, __VA_ARGS__)
+#define ZMK_MOD_TAP(name, ...) ZMK_BEHAVIOR(name, mod_tap, __VA_ARGS__)
 #define ZMK_KEY_REPEAT(name, ...) ZMK_BEHAVIOR(name, key_repeat, __VA_ARGS__)
 #if ZMK_HELPERS_KEEP_NATIVE != 1
     #undef ZMK_MACRO

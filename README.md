@@ -101,6 +101,7 @@ variants.
 | [`ZMK_AUTO_LAYER`]      | Create a new `auto-layer` behavior instance                   |
 | [`ZMK_CAPS_WORD`]       | Create a new `caps-word` behavior instance                    |
 | [`ZMK_HOLD_TAP`]        | Create a new `hold-tap` behavior instance                     |
+| [`ZMK_MOD_TAP`]         | Create a new `mod-tap` behavior instance                      |
 | [`ZMK_KEY_REPEAT`]      | Create a new `key-repeat` behavior instance                   |
 | [`ZMK_MACRO`]           | Create a new `key-macro` behavior instance                    |
 | [`ZMK_MACRO_ONE_PARAM`] | Create a new `macro-one-param` behavior instance              |
