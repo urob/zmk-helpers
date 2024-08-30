@@ -111,6 +111,34 @@
         }; \
     };
 
+/* ZMK_LEADER_SEQUENCE */
+
+#define ZMK_LEADER_SEQUENCE(...) CONCAT(ZMK_LEADER_SEQUENCE_, VARGS(__VA_ARGS__))(__VA_ARGS__)
+#define ZMK_LEADER_SEQUENCE_3(name, leader_bindings, sequence) \
+    / { \
+        leader_sequences { \
+            compatible = "zmk,leader-sequences"; \
+            leader_sequence_ ## name { \
+                bindings = <leader_bindings>; \
+                key-positions = <sequence>; \
+            }; \
+        }; \
+    };
+#define ZMK_LEADER_SEQUENCE_4(name, leader_bindings, sequence, leader_layers) \
+    ZMK_LEADER_SEQUENCE_5(name, leader_bindings, sequence, leader_layers, )
+#define ZMK_LEADER_SEQUENCE_5(name, leader_bindings, sequence, leader_layers, leader_vaargs) \
+    / { \
+        leader_sequences { \
+            compatible = "zmk,leader-sequences"; \
+            leader_sequence_ ## name { \
+                bindings = <leader_bindings>; \
+                key-positions = <sequence>; \
+                layers = <leader_layers>; \
+                leader_vaargs \
+            }; \
+        }; \
+    };
+
 /* ZMK_CONDITIONAL_LAYER */
 
 #define ZMK_CONDITIONAL_LAYER(name, if_layers, then_layer) \

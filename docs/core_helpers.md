@@ -6,6 +6,7 @@
 - [`ZMK_COMBO`](#zmk_combo)
 - [`ZMK_CONDITIONAL_LAYER`](#zmk_conditional_layer)
 - [`ZMK_LAYER`](#zmk_layer)
+- [`ZMK_LEADER_SEQUENCE`](#zmk_leader_sequence)
 - [`ZMK_UNICODE`](#zmk_unicode)
 
 ## ZMK_BEHAVIOR
@@ -208,6 +209,21 @@ ZMK_LAYER(base,
 )
 
 ```
+
+## ZMK_LEADER_SEQUENCE
+
+### Synopsis
+
+`ZMK_LEADER_SEQUENCE(name, bindings, sequence, layers, extra)`
+
+Create a leader sequence that triggers `binding` if `&leader` is pressed, followed by keys in
+`sequence`.
+
+- `name`: a unique identifier string
+- `binding`: a behavior instance that is triggered by the leader sequence
+- `sequence`: a list of 1 or more key positions that defines the sequence
+- `layers` (optional): a list of layers on which the sequences can be activated (defaults to `All`)
+- `extra` (optional): additional configuration options (e.g., `immediate-trigger;`)
 
 ## ZMK_UNICODE
 

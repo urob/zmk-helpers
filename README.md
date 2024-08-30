@@ -90,6 +90,7 @@ layers, etc.
 | [`ZMK_COMBO`]                  | Create a combo                                     |
 | [`ZMK_CONDITIONAl_LAYER`]      | Create a `tri-layer` condition                     |
 | [`ZMK_LAYER`]                  | Create a layer and add it to the keymap            |
+| [`ZMK_LEADER_SEQUENCE`]        | Create a leader key sequence                       |
 | [`ZMK_UNICODE_SINGLE`]         | Create a unicode-char                              |
 | [`ZMK_UNICODE_PAIR`]           | Create a pair of lowercase/uppercase unicode-chars |
 
@@ -231,6 +232,7 @@ guidelines:
 [`ZMK_COMBO`]: docs/core_helpers.md#zmk_combo
 [`ZMK_CONDITIONAL_LAYER`]: docs/core_helpers.md#zmk_conditional_layer
 [`ZMK_LAYER`]: docs/core_helpers.md#zmk_layer
+[`ZMK_LEADER_SEQUENCE`]: docs/core_helpers.md#zmk_leader_sequence
 [`ZMK_UNICODE_SINGLE`]: docs/core_helpers.md#zmk_unicode
 [`ZMK_UNICODE_PAIR`]: docs/core_helpers.md#zmk_unicode
 [`ZMK_AUTO_LAYER`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
