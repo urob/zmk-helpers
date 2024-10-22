@@ -1,0 +1,18 @@
+/* Slovak letters */
+
+ZMK_UNICODE_PAIR(sk_ad,     N0, N0,  E, N4,     N0, N0,  C, N4) // ä/Ä
+ZMK_UNICODE_PAIR(sk_aa,     N0, N0,  E, N1,     N0, N0,  C, N1) // á/Á
+ZMK_UNICODE_PAIR(sk_ea,     N0, N0,  E, N9,     N0, N0,  C, N9) // é/É
+ZMK_UNICODE_PAIR(sk_ia,     N0, N0,  E,  D,     N0, N0,  C,  D) // í/Í
+ZMK_UNICODE_PAIR(sk_ua,     N0, N0,  F,  A,     N0, N0,  D,  A) // ú/Ú
+ZMK_UNICODE_PAIR(sk_oa,     N0, N0,  F, N3,     N0, N0,  D, N3) // ó/Ó
+ZMK_UNICODE_PAIR(sk_ox,     N0, N0,  F, N4,     N0, N0,  D, N4) // ô/Ô
+ZMK_UNICODE_PAIR(sk_ya,     N0, N0,  F,  D,     N0, N0,  D,  D) // ý/Ý
+ZMK_UNICODE_PAIR(sk_dc,     N0, N1, N0,  F,     N0, N1, N0,  E) // ď/Ď
+ZMK_UNICODE_PAIR(sk_tc,     N0, N1, N6, N5,     N0, N1, N6, N4) // ť/Ť
+ZMK_UNICODE_PAIR(sk_nc,     N0, N1, N4, N8,     N0, N1, N4, N7) // ň/Ň
+ZMK_UNICODE_PAIR(sk_lc,     N0, N1, N3,  E,     N0, N1, N3,  D) // ľ/Ľ
+ZMK_UNICODE_PAIR(sk_cc,     N0, N1, N0,  D,     N0, N1, N0,  C) // č/Č
+ZMK_UNICODE_PAIR(sk_zc,     N0, N1, N7,  E,     N0, N1, N7,  D) // ž/Ž
+ZMK_UNICODE_PAIR(sk_sc,     N0, N1, N6, N1,     N0, N1, N6, N0) // š/Š
+ZMK_UNICODE_PAIR(sk_ra,     N0, N1, N5, N5,     N0, N1, N5, N4) // ŕ/Ŕ
