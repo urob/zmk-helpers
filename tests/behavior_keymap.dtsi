@@ -1,0 +1,11 @@
+#include <dt-bindings/zmk/keys.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/kscan_mock.h>
+
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/unicode-chars/german.dtsi"
+
+ZMK_LAYER(default_layer,
+    &de_ae &de_oe
+    &de_ue &kp LSHFT
+)
