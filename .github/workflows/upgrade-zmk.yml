@@ -1,0 +1,13 @@
+name: Check for new ZMK releases
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 22 * * *"  # Run daily at 22:00 UTC (17:00 ET)
+
+jobs:
+  build:
+    uses: urob/zmk-modules-actions/.github/workflows/upgrade-zmk.yml@main
+    permissions:
+      contents: write
+    secrets: inherit
