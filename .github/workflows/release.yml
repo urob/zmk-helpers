@@ -1,4 +1,5 @@
-name: Create a new module release
+name: Release module version
+
 on:
   pull_request:
     types:
@@ -6,8 +7,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
-  build:
-    permissions:
-      contents: write
-    uses: urob/zmk-modules-actions/.github/workflows/upgrade-module.yml@main
+  release:
+    uses: urob/zmk-modules-actions/.github/workflows/upgrade-module.yml@v1

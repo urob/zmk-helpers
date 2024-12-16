@@ -4,17 +4,17 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - ".github/workflows/test.yml"
-      - "tests/**"
-      - "src/**"
+      - "dts/**"
       - "include/**"
+      - "src/**"
+      - "tests/**"
   pull_request:
     paths:
-      - ".github/workflows/test.yml"
-      - "tests/**"
-      - "src/**"
+      - "dts/**"
       - "include/**"
+      - "src/**"
+      - "tests/**"
 
 jobs:
-  build:
-    uses: urob/zmk-modules-actions/.github/workflows/run-tests.yml@main
+  test:
+    uses: urob/zmk-modules-actions/.github/workflows/run-tests.yml@v1
