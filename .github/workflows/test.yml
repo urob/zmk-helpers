@@ -17,4 +17,4 @@ on:
 
 jobs:
   test:
-    uses: urob/zmk-modules-actions/.github/workflows/run-tests.yml@v1
+    uses: urob/zmk-actions/.github/workflows/run-tests.yml@v2

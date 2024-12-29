@@ -12,4 +12,4 @@ permissions:
 
 jobs:
   release:
-    uses: urob/zmk-modules-actions/.github/workflows/upgrade-module.yml@v1
+    uses: urob/zmk-actions/.github/workflows/upgrade-module.yml@v2
