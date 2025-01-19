@@ -24,16 +24,6 @@ to do anything specials; keymap-drawer will find the headers automatically.
 
    By default the config file will be expected to be at `keymap-drawer.config.yaml` at the repo root.
 
-3. Add `west_config_path: "config"` to the workflow file:
-
-   ```yaml
-   jobs:
-     draw:
-       with:
-         west_config_path: "config"
-         # other parameters...
-   ```
-
 ## Running keymap-drawer locally
 
 1. Make sure your have `keymap-drawer` version `0.18.0` or later
