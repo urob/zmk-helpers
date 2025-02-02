@@ -48,25 +48,33 @@
 #define RM4 26
 #define RM5 27
 
-#define LB0 29  // left-bottom row
-#define LB1 28
-#define LB2 27
-#define LB3 26
-#define LB4 25
-#define LB5 24
+#define LB0 33  // left-bottom row
+#define LB1 32
+#define LB2 31
+#define LB3 30
+#define LB4 29
+#define LB5 28
 
-#define RB0 30  // right-bottom row
-#define RB1 31
-#define RB2 32
-#define RB3 33
-#define RB4 34
-#define RB5 35
+#define RB0 36  // right-bottom row
+#define RB1 37
+#define RB2 38
+#define RB3 39
+#define RB4 40
+#define RB5 41
 
-#define LH0 38  // left thumb keys
-#define LH1 37
-#define LH2 36
+#define LH0 44  // left thumb keys
+#define LH1 43
+#define LH2 42
 
-#define RH0 39  // right thumb keys
-#define RH1 40
-#define RH2 41
+#define RH0 45  // right thumb keys
+#define RH1 46
+#define RH2 47
+
+#define J0 6
+#define J1 19 
+#define J2 20
+#define J3 21
+#define J4 35
+
+#define E0 34
 
