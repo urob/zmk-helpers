@@ -1,0 +1,11 @@
+/* polish letters */
+
+ZMK_UNICODE_PAIR(pl_a_ogonek,     N0, N1, N0, N5,     N0, N1, N0, N4) // ą/Ą
+ZMK_UNICODE_PAIR(pl_c_acute,      N0, N1, N0, N7,     N0, N1, N0, N6) // ć/Ć
+ZMK_UNICODE_PAIR(pl_e_ogonek,     N0, N1, N1, N9,     N0, N1, N1, N8) // ę/Ę
+ZMK_UNICODE_PAIR(pl_l_stroke,     N0, N1, N4, N2,     N0, N1, N4, N1) // ł/Ł
+ZMK_UNICODE_PAIR(pl_o_acute,      N0, N0,  F, N3,     N0, N0,  F, N2) // ó/Ó
+ZMK_UNICODE_PAIR(pl_n_acute,      N0, N1, N4, N4,     N0, N1, N4, N3) // ń/Ń
+ZMK_UNICODE_PAIR(pl_s_acute,      N0, N1, N5,  B,     N0, N1, N5,  A) // ś/Ś
+ZMK_UNICODE_PAIR(pl_z_acute,      N0, N1, N7,  A,     N0, N1, N7, N9) // ź/Ź
+ZMK_UNICODE_PAIR(pl_z_dot,        N0, N1, N7,  C,     N0, N1, N7,  B) // ż/Ż

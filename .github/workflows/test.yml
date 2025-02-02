@@ -1,0 +1,23 @@
+name: Run tests
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "dts/**"
+      - "include/**"
+      - "src/**"
+      - "tests/**"
+  pull_request:
+    paths:
+      - "dts/**"
+      - "include/**"
+      - "src/**"
+      - "tests/**"
+
+jobs:
+  test:
+    uses: urob/zmk-actions/.github/workflows/run-tests.yml@v4
+    with:
+      # Set to 'zephyr' for Zephyr SDK, or 'gnuarmemb' for GNU Arm Embedded.
+      toolchain: gnuarmemb

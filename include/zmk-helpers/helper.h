@@ -17,6 +17,8 @@
 
 /* ZMK_BEHAVIOR */
 
+#define ZMK_BEHAVIOR_CORE_adaptive_key    compatible = "zmk,behavior-adaptive-key";    #binding-cells = <0>
+#define ZMK_BEHAVIOR_CORE_auto_layer      compatible = "zmk,behavior-auto-layer";      #binding-cells = <1>
 #define ZMK_BEHAVIOR_CORE_caps_word       compatible = "zmk,behavior-caps-word";       #binding-cells = <0>
 #define ZMK_BEHAVIOR_CORE_dynamic_macro   compatible = "zmk,behavior-dynamic-macro";   #binding-cells = <1>
 #define ZMK_BEHAVIOR_CORE_hold_tap        compatible = "zmk,behavior-hold-tap";        #binding-cells = <2>
@@ -38,6 +40,22 @@
             }; \
         }; \
     };
+
+#define ZMK_ADAPTIVE_KEY(name, ...) ZMK_BEHAVIOR(name, adaptive_key, __VA_ARGS__)
+#define ZMK_AUTO_LAYER(name, ...) ZMK_BEHAVIOR(name, auto_layer, __VA_ARGS__)
+#define ZMK_CAPS_WORD(name, ...) ZMK_BEHAVIOR(name, caps_word, __VA_ARGS__)
+#define ZMK_HOLD_TAP(name, ...) ZMK_BEHAVIOR(name, hold_tap, __VA_ARGS__)
+#define ZMK_KEY_REPEAT(name, ...) ZMK_BEHAVIOR(name, key_repeat, __VA_ARGS__)
+#if ZMK_HELPERS_KEEP_NATIVE != 1
+    #undef ZMK_MACRO
+    #define ZMK_MACRO(name, ...) ZMK_BEHAVIOR(name, macro, __VA_ARGS__)
+#endif
+#define ZMK_MACRO_ONE_PARAM(name, ...) ZMK_BEHAVIOR(name, macro_one_param, __VA_ARGS__)
+#define ZMK_MACRO_TWO_PARAM(name, ...) ZMK_BEHAVIOR(name, macro_two_param, __VA_ARGS__)
+#define ZMK_MOD_MORPH(name, ...) ZMK_BEHAVIOR(name, mod_morph, __VA_ARGS__)
+#define ZMK_STICKY_KEY(name, ...) ZMK_BEHAVIOR(name, sticky_key, __VA_ARGS__)
+#define ZMK_TAP_DANCE(name, ...) ZMK_BEHAVIOR(name, tap_dance, __VA_ARGS__)
+#define ZMK_TRI_STATE(name, ...) ZMK_BEHAVIOR(name, tri_state, __VA_ARGS__)
 
 /* ZMK_LAYER */
 
@@ -95,13 +113,41 @@
         }; \
     };
 
+/* ZMK_LEADER_SEQUENCE */
+
+#define ZMK_LEADER_SEQUENCE(...) CONCAT(ZMK_LEADER_SEQUENCE_, VARGS(__VA_ARGS__))(__VA_ARGS__)
+#define ZMK_LEADER_SEQUENCE_3(name, leader_bindings, sequence) \
+    / { \
+        leader_sequences { \
+            compatible = "zmk,leader-sequences"; \
+            leader_sequence_ ## name { \
+                bindings = <leader_bindings>; \
+                key-positions = <sequence>; \
+            }; \
+        }; \
+    };
+#define ZMK_LEADER_SEQUENCE_4(name, leader_bindings, sequence, leader_layers) \
+    ZMK_LEADER_SEQUENCE_5(name, leader_bindings, sequence, leader_layers, )
+#define ZMK_LEADER_SEQUENCE_5(name, leader_bindings, sequence, leader_layers, leader_vaargs) \
+    / { \
+        leader_sequences { \
+            compatible = "zmk,leader-sequences"; \
+            leader_sequence_ ## name { \
+                bindings = <leader_bindings>; \
+                key-positions = <sequence>; \
+                layers = <leader_layers>; \
+                leader_vaargs \
+            }; \
+        }; \
+    };
+
 /* ZMK_CONDITIONAL_LAYER */
 
-#define ZMK_CONDITIONAL_LAYER(if_layers, then_layer) \
+#define ZMK_CONDITIONAL_LAYER(name, if_layers, then_layer) \
     / { \
         conditional_layers { \
             compatible = "zmk,conditional-layers"; \
-            tri_layer { \
+            tri_layer_ ## name { \
                 if-layers = <if_layers>; \
                 then-layer = <then_layer>; \
             }; \
@@ -163,3 +209,9 @@
     UC_MACRO(name ## _upper, &kp U0 &kp U1 &kp U2 &kp U3) \
     UC_MODMORPH(name, &name ## _lower, &name ## _upper)
 
+/* ZMK_APPLY_MATRIX_TRANSFORM */
+
+#define ZMK_APPLY_MATRIX_TRANSFORM(transform) \
+    / { \
+        chosen { zmk,matrix_transform = &transform; }; \
+    };

@@ -1,0 +1,7 @@
+/* Romanian diacritics */
+
+ZMK_UNICODE_PAIR(ro_a ,     N0, N1, N0, N3,     N0, N1, N0, N2 ) // ă/Ă
+ZMK_UNICODE_PAIR(ro_ai,     N0, N0,  E, N2,     N0, N0,  C, N2 ) // â/Â
+ZMK_UNICODE_PAIR(ro_i ,     N0, N0,  E,  E,     N0, N0,  C,  E ) // î/Î
+ZMK_UNICODE_PAIR(ro_s ,     N0, N2, N1, N9,     N0, N2, N1, N8 ) // ș/Ș
+ZMK_UNICODE_PAIR(ro_t ,     N0, N2, N1,  B,     N0, N2, N1,  A ) // ț/Ț

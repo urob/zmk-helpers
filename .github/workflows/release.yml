@@ -1,0 +1,15 @@
+name: Release module version
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    uses: urob/zmk-actions/.github/workflows/upgrade-module.yml@v4
