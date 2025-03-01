@@ -90,16 +90,16 @@ layers, etc.
 | [`ZMK_COMBO`]                  | Create a combo                                     |
 | [`ZMK_CONDITIONAl_LAYER`]      | Create a `tri-layer` condition                     |
 | [`ZMK_LAYER`]                  | Create a layer and add it to the keymap            |
-| [`ZMK_LEADER_SEQUENCE`]        | Create a leader key sequence                       |
+| [`ZMK_LEADER_SEQUENCE`]        | Create a leader key sequence (*)                   |
 | [`ZMK_UNICODE_SINGLE`]         | Create a unicode-char                              |
 | [`ZMK_UNICODE_PAIR`]           | Create a pair of lowercase/uppercase unicode-chars |
 
-In addition to the generic `ZMK_BEHAVIOR` macro, version 2 also provides the following explicit
-variants.
+In addition to the generic `ZMK_BEHAVIOR` macro, there are also explicit variants for the following
+behaviors.
 
 | Macro                   | Purpose                                                       |
 | ----------------------- | ------------------------------------------------------------- |
-| [`ZMK_AUTO_LAYER`]      | Create a new `auto-layer` behavior instance                   |
+| [`ZMK_AUTO_LAYER`]      | Create a new `auto-layer` behavior instance (*)               |
 | [`ZMK_CAPS_WORD`]       | Create a new `caps-word` behavior instance                    |
 | [`ZMK_HOLD_TAP`]        | Create a new `hold-tap` behavior instance                     |
 | [`ZMK_KEY_REPEAT`]      | Create a new `key-repeat` behavior instance                   |
@@ -109,7 +109,9 @@ variants.
 | [`ZMK_MOD_MORPH`]       | Create a new `mod-morph` behavior instance                    |
 | [`ZMK_STICKY_KEY`]      | Create a new `sticky-key` behavior instance                   |
 | [`ZMK_TAP_DANCE`]       | Create a new `tap-dance` behavior instance                    |
-| [`ZMK_TRI_STATE`]       | Create a new `tri-state` behavior instance (requires [#1366]) |
+| [`ZMK_TRI_STATE`]       | Create a new `tri-state` behavior instance (*)                |
+
+(*) Marked behaviors are implemented as modules and aren't part of ZMK core.
 
 The explicit behavior helpers are inspired by the native ZMK implementation of `ZMK_MACRO`. They
 differ in that they automatically create all Devicetree nodes as needed. So instead of calling them
@@ -138,9 +140,10 @@ The following layouts are currently implemented.
 | `34.h`                  | 34               | Ferris, Hypergolic, Sweep                  |
 | `36.h`                  | 36               | Corne (5 cols), Corne-ish Zen (5 cols)     |
 | `42.h`                  | 42               | Corne, Corne-ish Zen                       |
+| `eyelash42.h`           | 42+              | Eyelash Corne with Joystick & Encoder      |
 | `4x12.h`, `4x12_wide.h` | 48               | Planck                                     |
 | `5x6.h`                 | 60               | Caldera                                    |
-| `adv360_custom.h`       | 76               | Advantage360 Pro (custom matrix transform) |
+| `adv360.h`              | 76               | Kinesis Advantage360 Pro                   |
 | `glove80.h`             | 80               | Glove80                                    |
 | `hillside_*.h`          | 46, 48, 52 or 56 | Hillside family                            |
 | `jian.h`                | 44               | Jian, Jorne                                |
