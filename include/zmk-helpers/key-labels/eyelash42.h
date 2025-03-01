@@ -10,12 +10,12 @@ https://github.com/a741725193/zmk-new_corne/blob/main/README_EN.md
   ╰───────────╮ 42  43  44 │ ╰────╯      ╰────╯      │  45  46  47 ╭───────────╯
               ╰────────────╯                         ╰─────────────╯
 
-  ╭──────────────────────────────╮              ╭────╮      ╭──────────────────────────────╮
-  │ LT5  LT4  LT3  LT2  LT1  LT0 │          ╭───╯ J0 ╰───╮  │ RT0  RT1  RT2  RT3  RT4  RT5 │
-  │ LM5  LM4  LM3  LM2  LM1  LM0 │ ╭─────╮  │ J1  J2  J3 │  │ RM0  RM1  RM2  RM3  RM4  RM5 │
-  │ LB5  LB4  LB3  LB2  LB1  LB0 │ │ LEC │  ╰───╮ J4 ╭───╯  │ RB0  RB1  RB2  RB3  RB4  RB5 │
-  ╰──────────────╮ LH2  LH1  LH0 │ ╰─────╯      ╰────╯      │ RH0  RH1  RH2 ╭──────────────╯
-                 ╰───────────────╯                          ╰───────────────╯
+  ╭──────────────────────────────╮              ╭─────╮      ╭──────────────────────────────╮
+  │ LT5  LT4  LT3  LT2  LT1  LT0 │          ╭───╯ JS0 ╰───╮  │ RT0  RT1  RT2  RT3  RT4  RT5 │
+  │ LM5  LM4  LM3  LM2  LM1  LM0 │ ╭─────╮  │ JS1 JS2 JS3 │  │ RM0  RM1  RM2  RM3  RM4  RM5 │
+  │ LB5  LB4  LB3  LB2  LB1  LB0 │ │ LEC │  ╰───╮ JS4 ╭───╯  │ RB0  RB1  RB2  RB3  RB4  RB5 │
+  ╰──────────────╮ LH2  LH1  LH0 │ ╰─────╯      ╰─────╯      │ RH0  RH1  RH2 ╭──────────────╯
+                 ╰───────────────╯                           ╰───────────────╯
 
 */
 
@@ -71,11 +71,10 @@ https://github.com/a741725193/zmk-new_corne/blob/main/README_EN.md
 #define RH1 46
 #define RH2 47
 
-#define J0 6
-#define J1 19
-#define J2 20
-#define J3 21
-#define J4 35
+#define JS0 6
+#define JS1 19
+#define JS2 20
+#define JS3 21
+#define JS4 35
 
 #define LEC 34
-
