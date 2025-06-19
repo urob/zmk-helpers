@@ -63,7 +63,7 @@ ln -s zmk-helpers-repo/include/zmk-helpers config/zmk-helpers
 Source `helper.h` near the top of your `.keymap` file. Optionally, source `key-labels` and
 `unicode-chars` as needed:
 
-```C++
+```c
 #include "zmk-helpers/helper.h"
 
 // Source desired key-position labels
@@ -90,28 +90,28 @@ layers, etc.
 | [`ZMK_COMBO`]                  | Create a combo                                     |
 | [`ZMK_CONDITIONAl_LAYER`]      | Create a `tri-layer` condition                     |
 | [`ZMK_LAYER`]                  | Create a layer and add it to the keymap            |
-| [`ZMK_LEADER_SEQUENCE`]        | Create a leader key sequence (*)                   |
+| [`ZMK_LEADER_SEQUENCE`]        | Create a leader key sequence (\*)                  |
 | [`ZMK_UNICODE_SINGLE`]         | Create a unicode-char                              |
 | [`ZMK_UNICODE_PAIR`]           | Create a pair of lowercase/uppercase unicode-chars |
 
 In addition to the generic `ZMK_BEHAVIOR` macro, there are also explicit variants for the following
 behaviors.
 
-| Macro                   | Purpose                                                       |
-| ----------------------- | ------------------------------------------------------------- |
-| [`ZMK_AUTO_LAYER`]      | Create a new `auto-layer` behavior instance (*)               |
-| [`ZMK_CAPS_WORD`]       | Create a new `caps-word` behavior instance                    |
-| [`ZMK_HOLD_TAP`]        | Create a new `hold-tap` behavior instance                     |
-| [`ZMK_KEY_REPEAT`]      | Create a new `key-repeat` behavior instance                   |
-| [`ZMK_MACRO`]           | Create a new `key-macro` behavior instance                    |
-| [`ZMK_MACRO_ONE_PARAM`] | Create a new `macro-one-param` behavior instance              |
-| [`ZMK_MACRO_TWO_PARAM`] | Create a new `macro-two-param` behavior instance              |
-| [`ZMK_MOD_MORPH`]       | Create a new `mod-morph` behavior instance                    |
-| [`ZMK_STICKY_KEY`]      | Create a new `sticky-key` behavior instance                   |
-| [`ZMK_TAP_DANCE`]       | Create a new `tap-dance` behavior instance                    |
-| [`ZMK_TRI_STATE`]       | Create a new `tri-state` behavior instance (*)                |
+| Macro                   | Purpose                                          |
+| ----------------------- | ------------------------------------------------ |
+| [`ZMK_AUTO_LAYER`]      | Create a new `auto-layer` behavior instance (\*) |
+| [`ZMK_CAPS_WORD`]       | Create a new `caps-word` behavior instance       |
+| [`ZMK_HOLD_TAP`]        | Create a new `hold-tap` behavior instance        |
+| [`ZMK_KEY_REPEAT`]      | Create a new `key-repeat` behavior instance      |
+| [`ZMK_MACRO`]           | Create a new `key-macro` behavior instance       |
+| [`ZMK_MACRO_ONE_PARAM`] | Create a new `macro-one-param` behavior instance |
+| [`ZMK_MACRO_TWO_PARAM`] | Create a new `macro-two-param` behavior instance |
+| [`ZMK_MOD_MORPH`]       | Create a new `mod-morph` behavior instance       |
+| [`ZMK_STICKY_KEY`]      | Create a new `sticky-key` behavior instance      |
+| [`ZMK_TAP_DANCE`]       | Create a new `tap-dance` behavior instance       |
+| [`ZMK_TRI_STATE`]       | Create a new `tri-state` behavior instance (\*)  |
 
-(*) Marked behaviors are implemented as modules and aren't part of ZMK core.
+(\*) Marked behaviors are implemented as modules and aren't part of ZMK core.
 
 The explicit behavior helpers are inspired by the native ZMK implementation of `ZMK_MACRO`. They
 differ in that they automatically create all Devicetree nodes as needed. So instead of calling them
@@ -135,23 +135,25 @@ for the 60-key _Sofle_ nest the labels for the 34-key _Sweep_ as follows:
 
 The following layouts are currently implemented.
 
-| Header                  | \# of Keys       | Examples                                   |
-| ----------------------- | ---------------- | ------------------------------------------ |
-| `34.h`                  | 34               | Ferris, Hypergolic, Sweep                  |
-| `36.h`                  | 36               | Corne (5 cols), Corne-ish Zen (5 cols)     |
-| `42.h`                  | 42               | Corne, Corne-ish Zen                       |
-| `eyelash42.h`           | 42+              | Eyelash Corne with Joystick & Encoder      |
-| `4x12.h`, `4x12_wide.h` | 48               | Planck                                     |
-| `5x6.h`                 | 60               | Caldera                                    |
-| `adv360.h`              | 76               | Kinesis Advantage360 Pro                   |
-| `glove80.h`             | 80               | Glove80                                    |
-| `hillside_*.h`          | 46, 48, 52 or 56 | Hillside family                            |
-| `jian.h`                | 44               | Jian, Jorne                                |
-| `kyria.h`               | 50               | Kyria                                      |
-| `lily58.h`              | 58               | Lily58                                     |
-| `osprette.h`            | 34               | Osprette                                   |
-| `sofle.h`               | 60               | Sofle                                      |
-| `totem.h`               | 38               | Totem                                      |
+| Header                   | \# of Keys       | Examples                               |
+| ------------------------ | ---------------- | -------------------------------------- |
+| `34.h`                   | 34               | Ferris, Hypergolic, Sweep              |
+| `36.h`                   | 36               | Corne (5 cols), Corne-ish Zen (5 cols) |
+| `42.h`                   | 42               | Corne, Corne-ish Zen                   |
+| `eyelash42.h`            | 42+              | Eyelash Corne with Joystick & Encoder  |
+| `4x12.h`, `4x12_wide.h`  | 48               | Planck                                 |
+| `5x6.h`                  | 60               | Caldera                                |
+| `adv360.h`               | 76               | Kinesis Advantage360 Pro               |
+| `glove80.h`              | 80               | Glove80                                |
+| `hillside_*.h`           | 46, 48, 52 or 56 | Hillside family                        |
+| `jian.h`                 | 44               | Jian, Jorne                            |
+| `klor.h`, `klorkonrad.h` | 42, 44           | Klor, Klor Konrad                      |
+| `kyria.h`                | 50               | Kyria                                  |
+| `lily58.h`               | 58               | Lily58                                 |
+| `osprette.h`             | 34               | Osprette                               |
+| `rolio46.h`              | 46+              | Rolio46 with 2 encoders                |
+| `sofle.h`                | 60               | Sofle                                  |
+| `totem.h`                | 38               | Totem                                  |
 
 ### Unicode-characters and language collection
 
@@ -185,6 +187,14 @@ For example:
 #include "zmk-helpers/unicode-chars/german.dtsi"
 ```
 
+Note that some Linux systems default to different Unicode input methods. In those cases, one must do
+one of the following:
+
+- Configure the system to use the default of initializing Unicode input by tapping `LCTRL(LSHFT(U))`
+  and terminating by tapping `SPACE`.
+- Alternatively, configure the keyboard to use the Unicode input of your system. See "custom" below
+  for instructions.
+
 </details>
 
 <details><summary>macOS</summary>
@@ -195,6 +205,24 @@ language files. For example:
 
 ```c
 #define HOST_OS 2
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/unicode-chars/german.dtsi"
+```
+
+</details>
+
+<details><summary>custom</summary>
+
+Custom methods for entering unicode sequences can be configured by setting `OS_UNICODE_LEAD` and
+`OS_UNICODE_TRAIL` **_before_** sourcing `helper.h` and the desired language files.
+
+For example the following will hold <kbd>LCTRL</kbd> and <kbd>LSHFT</kbd> and tap <kbd>U</kbd> to
+initialize the unicode sequence, and then tap <kbd>Space</kbd> and release <kbd>LCTRL</kbd> and
+<kbd>LSHFT</kbd> to terminate the sequence.
+
+```c
+#define OS_UNICODE_LEAD &macro_press &kp LCTRL &kp LSHFT &macro_tap &kp U
+#define OS_UNICODE_TRAIL &macro_tap &kp SPACE &macro_release &kp LCTRL &kp LSHFT
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/unicode-chars/german.dtsi"
 ```

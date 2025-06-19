@@ -30,7 +30,7 @@ Create a behavior instance of type `type` and make it accessible under `&name`.
 This creates a custom "homerow mod" that can be added to the keymap using `&hrm`. For example,
 `&hrm LSHIFT T` creates a key that yields `T` on tap and `LSHIFT` on hold.
 
-```C++
+```c
 ZMK_BEHAVIOR(hrm, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <280>;
@@ -46,7 +46,7 @@ ZMK_BEHAVIOR(hrm, hold_tap,
 This creates a behavior that yields sticky-shift on tap and caps-word on double tap. It can be added
 to the keymap using `&ss_cw`.
 
-```C++
+```c
 ZMK_BEHAVIOR(ss_cw, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&sk LSHFT>, <&caps_word>;
@@ -259,6 +259,14 @@ In your keymap, set `HOST_OS` to `1` **_before_** sourcing `helper.h`:
 #include "zmk-helpers/helper.h"
 ```
 
+Note that some Linux systems default to different Unicode input methods. In those cases, one must do
+one of the following:
+
+- Configure the system to use the default of initializing Unicode input by tapping `LCTRL(LSHFT(U))`
+  and terminating by tapping `SPACE`.
+- Alternatively, configure the keyboard to use the Unicode input of your system. See "custom" below
+  for instructions.
+
 </details>
 
 <details><summary>macOS</summary>
@@ -273,11 +281,21 @@ input source. In your keymap, set `HOST_OS` to `2` **_before_** sourcing `helper
 
 </details>
 
-<details><summary>Other OS</summary>
+<details><summary>custom</summary>
 
 For non-default input channels or for other operating systems, one can set the variables
 `OS_UNICODE_LEAD` and `OS_UNICODE_TRAIL` to the character sequences that initialize/terminate the
 Unicode input.
+
+For example the following will hold <kbd>LCTRL</kbd> and <kbd>LSHFT</kbd> and tap <kbd>U</kbd> to
+initialize the unicode sequence, and then tap <kbd>Space</kbd> and release <kbd>LCTRL</kbd> and
+<kbd>LSHFT</kbd> to terminate the sequence.
+
+```c
+#define OS_UNICODE_LEAD &macro_press &kp LCTRL &kp LSHFT &macro_tap &kp U
+#define OS_UNICODE_TRAIL &macro_tap &kp SPACE &macro_release &kp LCTRL &kp LSHFT
+#include "zmk-helpers/helper.h"
+```
 
 </details>
 
