@@ -1,0 +1,40 @@
+/* Serbian Cyrillic letters */
+
+ZMK_UNICODE_PAIR(sr_a,          N0, N4, N3, N0,    N0, N4, N1, N0) // а/А
+ZMK_UNICODE_PAIR(sr_b,          N0, N4, N3, N1,    N0, N4, N1, N1) // б/Б
+ZMK_UNICODE_PAIR(sr_v,          N0, N4, N3, N2,    N0, N4, N1, N2) // в/В
+ZMK_UNICODE_PAIR(sr_g,          N0, N4, N3, N3,    N0, N4, N1, N3) // г/Г
+ZMK_UNICODE_PAIR(sr_d,          N0, N4, N3, N4,    N0, N4, N1, N4) // д/Д
+ZMK_UNICODE_PAIR(sr_dj,        N0, N4, N5, N2,    N0, N4, N0, N2) // ђ/Ђ
+ZMK_UNICODE_PAIR(sr_e,          N0, N4, N3, N5,    N0, N4, N1, N5) // е/Е
+ZMK_UNICODE_PAIR(sr_zh,         N0, N4, N3, N6,    N0, N4, N1, N6) // ж/Ж
+ZMK_UNICODE_PAIR(sr_z,          N0, N4, N3, N7,    N0, N4, N1, N7) // з/З
+ZMK_UNICODE_PAIR(sr_i,          N0, N4, N3, N8,    N0, N4, N1, N8) // и/И
+ZMK_UNICODE_PAIR(sr_j,         N0, N4, N5, N8,    N0, N4, N0, N8) // ј/Ј
+ZMK_UNICODE_PAIR(sr_k,          N0, N4, N3,  A,    N0, N4, N1,  A) // к/К
+ZMK_UNICODE_PAIR(sr_l,          N0, N4, N3,  B,    N0, N4, N1,  B) // л/Л
+ZMK_UNICODE_PAIR(sr_lj,        N0, N4, N5, N9,    N0, N4, N0, N9) // љ/Љ
+ZMK_UNICODE_PAIR(sr_m,          N0, N4, N3,  C,    N0, N4, N1,  C) // м/М
+ZMK_UNICODE_PAIR(sr_n,          N0, N4, N3,  D,    N0, N4, N1,  D) // н/Н
+ZMK_UNICODE_PAIR(sr_nj,        N0, N4, N5,  A,    N0, N4, N0,  A) // њ/Њ
+ZMK_UNICODE_PAIR(sr_o,          N0, N4, N3,  E,    N0, N4, N1,  E) // о/О
+ZMK_UNICODE_PAIR(sr_p,          N0, N4, N3,  F,    N0, N4, N1,  F) // п/П
+ZMK_UNICODE_PAIR(sr_r,          N0, N4, N4, N0,    N0, N4, N2, N0) // р/Р
+ZMK_UNICODE_PAIR(sr_s,          N0, N4, N4, N1,    N0, N4, N2, N1) // с/С
+ZMK_UNICODE_PAIR(sr_t,          N0, N4, N4, N2,    N0, N4, N2, N2) // т/Т
+ZMK_UNICODE_PAIR(sr_cu,       N0, N4, N5,  B,    N0, N4, N0,  B) // ћ/Ћ
+ZMK_UNICODE_PAIR(sr_u,          N0, N4, N4, N3,    N0, N4, N2, N3) // у/У
+ZMK_UNICODE_PAIR(sr_f,          N0, N4, N4, N4,    N0, N4, N2, N4) // ф/Ф
+ZMK_UNICODE_PAIR(sr_h,          N0, N4, N4, N5,    N0, N4, N2, N5) // х/Х
+ZMK_UNICODE_PAIR(sr_c,          N0, N4, N4, N6,    N0, N4, N2, N6) // ц/Ц
+ZMK_UNICODE_PAIR(sr_ch,         N0, N4, N4, N7,    N0, N4, N2, N7) // ч/Ч
+ZMK_UNICODE_PAIR(sr_dz,       N0, N4, N5,  F,    N0, N4, N0,  F) // џ/Џ
+ZMK_UNICODE_PAIR(sr_sh,         N0, N4, N4, N8,    N0, N4, N2, N8) // ш/Ш
+
+/* Serbian Latin letters */
+
+ZMK_UNICODE_PAIR(sr_lat_ch,    N0, N1, N0,  D,    N0, N1, N0,  C) // č/Č
+ZMK_UNICODE_PAIR(sr_lat_cu,    N0, N1, N0, N7,    N0, N1, N0, N6) // ć/Ć
+ZMK_UNICODE_PAIR(sr_lat_dj,   N0, N1, N1, N1,    N0, N1, N1, N0) // đ/Đ
+ZMK_UNICODE_PAIR(sr_lat_sh,    N0, N1, N6, N1,    N0, N1, N6, N0) // š/Š
+ZMK_UNICODE_PAIR(sr_lat_zh,    N0, N1, N7,  E,    N0, N1, N7,  D) // ž/Ž
