@@ -146,6 +146,7 @@ The following layouts are currently implemented.
 | `adv360.h`               | 76               | Kinesis Advantage360 Pro               |
 | `glove80.h`              | 80               | Glove80                                |
 | `hillside_*.h`           | 46, 48, 52 or 56 | Hillside family                        |
+| `hummingbird.h`          | 30               | Hummingbird, Tern, Phantom, Rufous     |
 | `jian.h`                 | 44               | Jian, Jorne                            |
 | `klor.h`, `klorkonrad.h` | 42, 44           | Klor, Klor Konrad                      |
 | `kyria.h`                | 50               | Kyria                                  |
