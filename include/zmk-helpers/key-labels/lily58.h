@@ -12,7 +12,7 @@
 
 // these labels follow the new standard but if you have your keyboard configured using the old labels
 // set this config to keep using them instead of updating/changing the current config
-#ifdef LILY58_OLD_LABELS
+#ifdef LILY58_STANDARD_LABELS
 
 #define LN0  5  // left-number row
 #define LN1  4
@@ -94,8 +94,6 @@
   │ 36  37  38  39  40  41  42 │ 43  44  45  46  47  48  49 │ │ LF5 LF4 LF3 LF2 LF1 LF0 LEC │ REC RF0 RF1 RF2 RF3 RF4 RF5 │
   ╰───────────╮ 50  51  52  53 │ 54  55  56  57 ╭───────────╯ ╰───────────╮ LH3 LH2 LH1 LH0 │ RH0 RH1 RH2 RH3 ╭───────────╯
               ╰────────────────┴────────────────╯                         ╰─────────────────┴─────────────────╯             */
-
-#pragma once
 
 #define LT0  5  // left-top row
 #define LT1  4
