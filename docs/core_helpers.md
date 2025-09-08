@@ -227,6 +227,10 @@ Create a leader sequence that triggers `binding` if `&leader` is pressed, follow
 
 ## ZMK_UNICODE
 
+**Note:** The Unicode helpers are deprecated in favor of the
+[zmk-unicode](https://github.com/urob/zmk-unicode/) module. Please see
+[#86](https://github.com/urob/zmk-helpers/discussions/86) for details.
+
 ### Synopsis
 
 `ZMK_UNICODE_SINGLE(name, L0, L1, L2, L3)`  

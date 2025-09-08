@@ -160,6 +160,10 @@ The following layouts are currently implemented.
 
 ### Unicode-characters and language collection
 
+**Note:** The Unicode helpers are deprecated in favor of the
+[zmk-unicode](https://github.com/urob/zmk-unicode/) module. Please see
+[#86](https://github.com/urob/zmk-helpers/discussions/86) for details.
+
 This collection defines unicode behaviors for all relevant characters in a given language. For
 instance, sourcing the German language file, one can add `&de_ae` to the keymap, which will send
 <kbd>ä</kbd>/<kbd>Ä</kbd> when pressed or shifted.
