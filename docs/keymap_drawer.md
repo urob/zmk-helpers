@@ -22,7 +22,7 @@ to do anything specials; keymap-drawer will find the headers automatically.
      zmk_additional_includes: ["zmk-helpers/include"]
    ```
 
-   By default the config file will be expected to be at `keymap-drawer.config.yaml` at the repo root.
+   By default the config file will be expected to be at `keymap_drawer.config.yaml` at the repo root.
 
 ## Running keymap-drawer locally
 
