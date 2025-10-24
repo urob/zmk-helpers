@@ -140,22 +140,29 @@ The following layouts are currently implemented.
 | `34.h`                   | 34               | Ferris, Hypergolic, Sweep              |
 | `36.h`                   | 36               | Corne (5 cols), Corne-ish Zen (5 cols) |
 | `42.h`                   | 42               | Corne, Corne-ish Zen                   |
+| `70.h`                   | 70               | Viterbi                                |
 | `eyelash42.h`            | 42+              | Eyelash Corne with Joystick & Encoder  |
 | `4x12.h`, `4x12_wide.h`  | 48               | Planck                                 |
 | `5x6.h`                  | 60               | Caldera                                |
 | `adv360.h`               | 76               | Kinesis Advantage360 Pro               |
 | `glove80.h`              | 80               | Glove80                                |
 | `hillside_*.h`           | 46, 48, 52 or 56 | Hillside family                        |
+| `hummingbird.h`          | 30               | Hummingbird, Tern, Phantom, Rufous     |
 | `jian.h`                 | 44               | Jian, Jorne                            |
 | `klor.h`, `klorkonrad.h` | 42, 44           | Klor, Klor Konrad                      |
 | `kyria.h`                | 50               | Kyria                                  |
-| `lily58.h`               | 58               | Lily58                                 |
+| `lily58.h`[^2]           | 58               | Lily58                                 |
 | `osprette.h`             | 34               | Osprette                               |
+| `redox.h`                | 66               | Redox                                  |
 | `rolio46.h`              | 46+              | Rolio46 with 2 encoders                |
 | `sofle.h`                | 60               | Sofle                                  |
 | `totem.h`                | 38               | Totem                                  |
 
 ### Unicode-characters and language collection
+
+**Note:** The Unicode helpers are deprecated in favor of the
+[zmk-unicode](https://github.com/urob/zmk-unicode/) module. Please see
+[#86](https://github.com/urob/zmk-helpers/discussions/86) for details.
 
 This collection defines unicode behaviors for all relevant characters in a given language. For
 instance, sourcing the German language file, one can add `&de_ae` to the keymap, which will send
@@ -246,6 +253,19 @@ initialize the unicode sequence, and then tap <kbd>Space</kbd> and release <kbd>
       build:
         uses: urob/zmk/.github/workflows/build-user-config.yml@build-with-submodules
     ```
+
+[^2]:
+    For historical reasons, one must set the `LILY58_STANDARD_LABELS` flag prior to sourcing the
+    `lily58.h` header (c.f.,
+    [4199830](https://github.com/urob/zmk-helpers/commit/4199830b581ee323ab612e5f8749676a4c8339a3)).
+
+    ```c
+    #define LILY58_STANDARD_LABELS
+    #include <zmk-helpers/key-labels/lily58.h>
+    ```
+
+    Without the flag, the labels will follow a non-standard convention. A future commit will reverse
+    the default, requiring keyboard updates for users of the non-default labels.
 
 ## Contributing
 
