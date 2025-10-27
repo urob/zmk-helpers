@@ -12,4 +12,3 @@ ZMK_UNICODE_PAIR(ca_o_acute,        N0, N0, F, N3,   N0, N0, D, N3)  // ó/Ó
 ZMK_UNICODE_PAIR(ca_u_grave,        N0, N0, F, N9,   N0, N0, D, N9)  // ù/Ù
 ZMK_UNICODE_PAIR(ca_u_acute,        N0, N0, F, A,    N0, N0, D, A)   // ú/Ú
 ZMK_UNICODE_PAIR(ca_u_diaeresis,    N0, N0, F, C,    N0, N0, D, C)   // ü/Ü
-ZMK_UNICODE_PAIR(es_n_tilde,        N0, N0, F, N1,   N0, N0, D, N1)  // ñ/Ñ
