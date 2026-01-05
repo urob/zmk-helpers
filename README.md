@@ -97,21 +97,30 @@ layers, etc.
 In addition to the generic `ZMK_BEHAVIOR` macro, there are also explicit variants for the following
 behaviors.
 
-| Macro                   | Purpose                                          |
-| ----------------------- | ------------------------------------------------ |
-| [`ZMK_AUTO_LAYER`]      | Create a new `auto-layer` behavior instance (\*) |
-| [`ZMK_CAPS_WORD`]       | Create a new `caps-word` behavior instance       |
-| [`ZMK_HOLD_TAP`]        | Create a new `hold-tap` behavior instance        |
-| [`ZMK_KEY_REPEAT`]      | Create a new `key-repeat` behavior instance      |
-| [`ZMK_MACRO`]           | Create a new `key-macro` behavior instance       |
-| [`ZMK_MACRO_ONE_PARAM`] | Create a new `macro-one-param` behavior instance |
-| [`ZMK_MACRO_TWO_PARAM`] | Create a new `macro-two-param` behavior instance |
-| [`ZMK_MOD_MORPH`]       | Create a new `mod-morph` behavior instance       |
-| [`ZMK_STICKY_KEY`]      | Create a new `sticky-key` behavior instance      |
-| [`ZMK_TAP_DANCE`]       | Create a new `tap-dance` behavior instance       |
-| [`ZMK_TRI_STATE`]       | Create a new `tri-state` behavior instance (\*)  |
+| Macro                     | Purpose                                            |
+| ------------------------- | -------------------------------------------------- |
+| [`ZMK_ADAPTIVE_KEY`]      | Create a new `adaptive-key` behavior instance (\*) |
+| [`ZMK_AUTO_LAYER`]        | Create a new `auto-layer` behavior instance (\*)   |
+| [`ZMK_CAPS_WORD`]         | Create a new `caps-word` behavior instance         |
+| [`ZMK_DYNAMIC_MACRO`]     | Create a new `dynamic-macro` behavior instance (\*)|
+| [`ZMK_HOLD_TAP`]          | Create a new `hold-tap` behavior instance          |
+| [`ZMK_INPUT_TWO_AXIS`]    | Create a new `input-two-axis` behavior instance    |
+| [`ZMK_KEY_REPEAT`]        | Create a new `key-repeat` behavior instance        |
+| [`ZMK_KEY_TOGGLE`]        | Create a new `key-toggle` behavior instance        |
+| [`ZMK_LAYER_TOGGLE`]      | Create a new `layer-toggle` behavior instance      |
+| [`ZMK_MACRO`]             | Create a new `key-macro` behavior instance         |
+| [`ZMK_MACRO_ONE_PARAM`]   | Create a new `macro-one-param` behavior instance   |
+| [`ZMK_MACRO_TWO_PARAM`]   | Create a new `macro-two-param` behavior instance   |
+| [`ZMK_MOD_MORPH`]         | Create a new `mod-morph` behavior instance         |
+| [`ZMK_MOMENTARY_LAYER`]   | Create a new `momentary-layer` behavior instance   |
+| [`ZMK_SENSOR_ROTATE`]     | Create a new `sensor-rotate` behavior instance     |
+| [`ZMK_SENSOR_ROTATE_VAR`] | Create a new `sensor-rotate-var` behavior instance |
+| [`ZMK_STICKY_KEY`]        | Create a new `sticky-key` behavior instance        |
+| [`ZMK_TAP_DANCE`]         | Create a new `tap-dance` behavior instance         |
+| [`ZMK_TO_LAYER`]          | Create a new `to-layer` behavior instance          |
+| [`ZMK_TRI_STATE`]         | Create a new `tri-state` behavior instance (\*)    |
 
-(\*) Marked behaviors are implemented as modules and aren't part of ZMK core.
+(\*) Marked behaviors require third-party modules to work.
 
 The explicit behavior helpers are inspired by the native ZMK implementation of `ZMK_MACRO`. They
 differ in that they automatically create all Devicetree nodes as needed. So instead of calling them
@@ -287,14 +296,22 @@ guidelines:
 [`ZMK_LEADER_SEQUENCE`]: docs/core_helpers.md#zmk_leader_sequence
 [`ZMK_UNICODE_SINGLE`]: docs/core_helpers.md#zmk_unicode
 [`ZMK_UNICODE_PAIR`]: docs/core_helpers.md#zmk_unicode
+[`ZMK_ADAPTIVE_KEY`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_AUTO_LAYER`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_CAPS_WORD`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
+[`ZMK_DYNAMIC_MACRO`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_HOLD_TAP`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
+[`ZMK_INPUT_TWO_AXIS`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_KEY_REPEAT`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
+[`ZMK_KEY_TOGGLE`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_MACRO`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_MACRO_ONE_PARAM`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_MACRO_TWO_PARAM`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_MOD_MORPH`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
+[`ZMK_MOMENTARY_LAYER`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
+[`ZMK_SENSOR_ROTATE`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
+[`ZMK_SENSOR_ROTATE_VAR`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_STICKY_KEY`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_TAP_DANCE`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
+[`ZMK_TO_LAYER`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_TRI_STATE`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
