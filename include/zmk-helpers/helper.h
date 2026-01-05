@@ -17,20 +17,6 @@
 
 /* ZMK_BEHAVIOR */
 
-#define ZMK_BEHAVIOR_CORE_adaptive_key    compatible = "zmk,behavior-adaptive-key";    #binding-cells = <0>
-#define ZMK_BEHAVIOR_CORE_auto_layer      compatible = "zmk,behavior-auto-layer";      #binding-cells = <1>
-#define ZMK_BEHAVIOR_CORE_caps_word       compatible = "zmk,behavior-caps-word";       #binding-cells = <0>
-#define ZMK_BEHAVIOR_CORE_dynamic_macro   compatible = "zmk,behavior-dynamic-macro";   #binding-cells = <1>
-#define ZMK_BEHAVIOR_CORE_hold_tap        compatible = "zmk,behavior-hold-tap";        #binding-cells = <2>
-#define ZMK_BEHAVIOR_CORE_key_repeat      compatible = "zmk,behavior-key-repeat";      #binding-cells = <0>
-#define ZMK_BEHAVIOR_CORE_macro           compatible = "zmk,behavior-macro";           #binding-cells = <0>
-#define ZMK_BEHAVIOR_CORE_macro_one_param compatible = "zmk,behavior-macro-one-param"; #binding-cells = <1>
-#define ZMK_BEHAVIOR_CORE_macro_two_param compatible = "zmk,behavior-macro-two-param"; #binding-cells = <2>
-#define ZMK_BEHAVIOR_CORE_mod_morph       compatible = "zmk,behavior-mod-morph";       #binding-cells = <0>
-#define ZMK_BEHAVIOR_CORE_sticky_key      compatible = "zmk,behavior-sticky-key";      #binding-cells = <1>
-#define ZMK_BEHAVIOR_CORE_tap_dance       compatible = "zmk,behavior-tap-dance";       #binding-cells = <0>
-#define ZMK_BEHAVIOR_CORE_tri_state       compatible = "zmk,behavior-tri-state";       #binding-cells = <0>
-
 #define ZMK_BEHAVIOR(name, type, ...) \
     / { \
         behaviors { \
@@ -41,11 +27,29 @@
         }; \
     };
 
-#define ZMK_ADAPTIVE_KEY(name, ...) ZMK_BEHAVIOR(name, adaptive_key, __VA_ARGS__)
-#define ZMK_AUTO_LAYER(name, ...) ZMK_BEHAVIOR(name, auto_layer, __VA_ARGS__)
+
+// Official behaviors
+#define ZMK_BEHAVIOR_CORE_caps_word       compatible = "zmk,behavior-caps-word";       #binding-cells = <0>
+#define ZMK_BEHAVIOR_CORE_hold_tap        compatible = "zmk,behavior-hold-tap";        #binding-cells = <2>
+#define ZMK_BEHAVIOR_CORE_input_two_axis  compatible = "zmk,behavior-input-two-axis";  #binding-cells = <1>
+#define ZMK_BEHAVIOR_CORE_key_repeat      compatible = "zmk,behavior-key-repeat";      #binding-cells = <0>
+#define ZMK_BEHAVIOR_CORE_key_toggle      compatible = "zmk,behavior-key-toggle";      #binding-cells = <1>
+#define ZMK_BEHAVIOR_CORE_layer_toggle    compatible = "zmk,behavior-layer-toggle";    #binding-cells = <1>
+#define ZMK_BEHAVIOR_CORE_macro           compatible = "zmk,behavior-macro";           #binding-cells = <0>
+#define ZMK_BEHAVIOR_CORE_macro_one_param compatible = "zmk,behavior-macro-one-param"; #binding-cells = <1>
+#define ZMK_BEHAVIOR_CORE_macro_two_param compatible = "zmk,behavior-macro-two-param"; #binding-cells = <2>
+#define ZMK_BEHAVIOR_CORE_mod_morph       compatible = "zmk,behavior-mod-morph";       #binding-cells = <0>
+#define ZMK_BEHAVIOR_CORE_momentary_layer compatible = "zmk,behavior-momentary-layer"; #binding-cells = <1>
+#define ZMK_BEHAVIOR_CORE_sticky_key      compatible = "zmk,behavior-sticky-key";      #binding-cells = <1>
+#define ZMK_BEHAVIOR_CORE_tap_dance       compatible = "zmk,behavior-tap-dance";       #binding-cells = <0>
+#define ZMK_BEHAVIOR_CORE_to_layer        compatible = "zmk,behavior-to-layer";        #binding-cells = <1>
+
 #define ZMK_CAPS_WORD(name, ...) ZMK_BEHAVIOR(name, caps_word, __VA_ARGS__)
 #define ZMK_HOLD_TAP(name, ...) ZMK_BEHAVIOR(name, hold_tap, __VA_ARGS__)
+#define ZMK_INPUT_TWO_AXIS(name, ...) ZMK_BEHAVIOR(name, input_two_axis, __VA_ARGS__)
 #define ZMK_KEY_REPEAT(name, ...) ZMK_BEHAVIOR(name, key_repeat, __VA_ARGS__)
+#define ZMK_KEY_TOGGLE(name, ...) ZMK_BEHAVIOR(name, key_toggle, __VA_ARGS__)
+#define ZMK_LAYER_TOGGLE(name, ...) ZMK_BEHAVIOR(name, layer_toggle, __VA_ARGS__)
 #if ZMK_HELPERS_KEEP_NATIVE != 1
     #undef ZMK_MACRO
     #define ZMK_MACRO(name, ...) ZMK_BEHAVIOR(name, macro, __VA_ARGS__)
@@ -53,8 +57,26 @@
 #define ZMK_MACRO_ONE_PARAM(name, ...) ZMK_BEHAVIOR(name, macro_one_param, __VA_ARGS__)
 #define ZMK_MACRO_TWO_PARAM(name, ...) ZMK_BEHAVIOR(name, macro_two_param, __VA_ARGS__)
 #define ZMK_MOD_MORPH(name, ...) ZMK_BEHAVIOR(name, mod_morph, __VA_ARGS__)
+#define ZMK_MOMENTARY_LAYER(name, ...) ZMK_BEHAVIOR(name, momentary_layer, __VA_ARGS__)
 #define ZMK_STICKY_KEY(name, ...) ZMK_BEHAVIOR(name, sticky_key, __VA_ARGS__)
 #define ZMK_TAP_DANCE(name, ...) ZMK_BEHAVIOR(name, tap_dance, __VA_ARGS__)
+#define ZMK_TO_LAYER(name, ...) ZMK_BEHAVIOR(name, to_layer, __VA_ARGS__)
+
+#define ZMK_SENSOR_ROTATE(name, ...) ZMK_BEHAVIOR(name, sensor_rotate, __VA_ARGS__)
+#define ZMK_SENSOR_ROTATE_VAR(name, ...) ZMK_BEHAVIOR(name, sensor_rotate_var, __VA_ARGS__)
+
+#define ZMK_BEHAVIOR_CORE_sensor_rotate     compatible = "zmk,behavior-sensor-rotate";     #sensor-binding-cells = <0>
+#define ZMK_BEHAVIOR_CORE_sensor_rotate_var compatible = "zmk,behavior-sensor-rotate-var"; #sensor-binding-cells = <2>
+
+// Third-party modules
+#define ZMK_BEHAVIOR_CORE_adaptive_key    compatible = "zmk,behavior-adaptive-key";    #binding-cells = <0>
+#define ZMK_BEHAVIOR_CORE_auto_layer      compatible = "zmk,behavior-auto-layer";      #binding-cells = <1>
+#define ZMK_BEHAVIOR_CORE_dynamic_macro   compatible = "zmk,behavior-dynamic-macro";   #binding-cells = <1>
+#define ZMK_BEHAVIOR_CORE_tri_state       compatible = "zmk,behavior-tri-state";       #binding-cells = <0>
+
+#define ZMK_ADAPTIVE_KEY(name, ...) ZMK_BEHAVIOR(name, adaptive_key, __VA_ARGS__)
+#define ZMK_AUTO_LAYER(name, ...) ZMK_BEHAVIOR(name, auto_layer, __VA_ARGS__)
+#define ZMK_DYNAMIC_MACRO(name, ...) ZMK_BEHAVIOR(name, dynamic_macro, __VA_ARGS__)
 #define ZMK_TRI_STATE(name, ...) ZMK_BEHAVIOR(name, tri_state, __VA_ARGS__)
 
 /* ZMK_LAYER */
