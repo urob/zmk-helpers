@@ -304,6 +304,7 @@ guidelines:
 [`ZMK_INPUT_TWO_AXIS`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_KEY_REPEAT`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_KEY_TOGGLE`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
+[`ZMK_LAYER_TOGGLE`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_MACRO`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_MACRO_ONE_PARAM`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
 [`ZMK_MACRO_TWO_PARAM`]: docs/core_helpers.md#zmk_behavior-(explicit-variants)
