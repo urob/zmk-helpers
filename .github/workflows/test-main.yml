@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    uses: urob/zmk-actions/.github/workflows/run-tests.yml@v8.0.1
+    uses: urob/zmk-actions/.github/workflows/run-tests.yml@v8
     with:
       toolchain: gnuarmemb
       zmk-version: main
