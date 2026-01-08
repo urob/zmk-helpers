@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   upgrade-zmk:
-    uses: urob/zmk-actions/.github/workflows/upgrade-zmk.yml@v8
+    uses: urob/zmk-actions/.github/workflows/upgrade-zmk.yml@c84422e66b0cef35eb9309382a3206a21ff78d1a # v8.0.1
     secrets:
       # Name of PAT with write access to pull requests
       token: ${{ secrets.ZMK_ACTIONS_TOKEN }}
