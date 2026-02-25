@@ -108,7 +108,7 @@
 
 #define ALL 0xff
 #if !defined COMBO_TERM
-    #define COMBO_TERM 30
+    #define COMBO_TERM 50
 #endif
 
 #define ZMK_COMBO(...) CONCAT(ZMK_COMBO_, VARGS(__VA_ARGS__))(__VA_ARGS__)
@@ -117,7 +117,7 @@
 #define ZMK_COMBO_4(name, combo_bindings, keypos, combo_layers) \
     ZMK_COMBO_5(name, combo_bindings, keypos, combo_layers, COMBO_TERM)
 #define ZMK_COMBO_5(name, combo_bindings, keypos, combo_layers, combo_timeout) \
-    ZMK_COMBO_6(name, combo_bindings, keypos, combo_layers, combo_timeout, 0)
+    ZMK_COMBO_6(name, combo_bindings, keypos, combo_layers, combo_timeout, (-1))
 #define ZMK_COMBO_6(name, combo_bindings, keypos, combo_layers, combo_timeout, combo_idle) \
     ZMK_COMBO_7(name, combo_bindings, keypos, combo_layers, combo_timeout, combo_idle, )
 #define ZMK_COMBO_7(name, combo_bindings, keypos, combo_layers, combo_timeout, combo_idle, combo_vaargs) \
