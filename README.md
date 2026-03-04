@@ -142,6 +142,12 @@ for the 60-key _Sofle_ nest the labels for the 34-key _Sweep_ as follows:
 
 ![plot](docs/img/key_labels_example.png)
 
+Besides individual key labels, the following group labels are defined:
+- `KEYS_L` and `KEYS_R` collecting all `B`-, `M`- and `T`-row keys on the left/right half
+- `THUMBS_L` and `THUMBS_R` collecting all `H`-row keys on the left/right half
+- `THUMBS` collecting all `H`-row keys
+- `NUMROW` collecting all `N`-row keys
+
 The following layouts are currently implemented.
 
 | Header                   | \# of Keys       | Examples                               |

@@ -46,3 +46,10 @@
 
 #define RH0 32  // right thumb keys
 #define RH1 33
+
+#define NUMROW 
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB1 LB2 LB3
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3
+#define THUMBS_L LH0 LH1
+#define THUMBS_R RH0 RH1
+#define THUMBS THUMBS_L THUMBS_R
