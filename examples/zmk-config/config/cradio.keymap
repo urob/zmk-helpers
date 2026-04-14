@@ -66,8 +66,8 @@ ZMK_CONDITIONAL_LAYER(ger, NAV NUM, GER)
 
 // combos
 ZMK_COMBO(sleep,    &win_sleep,  RT3 RT4, NAV)  // put Windows to sleep, only active on NAV layer
-ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3, ALL)  // copy on tap, cut on double-tap, active on all layers
-ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2, ALL)  // paste, active on all layers
+ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3)       // copy on tap, cut on double-tap, active on all layers
+ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2)       // paste, active on all layers
 
 /* Keymap */
 
