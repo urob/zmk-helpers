@@ -128,11 +128,11 @@ default can be globally overwritten with:
 
 <details><summary>Simple combo</summary>
 
-This creates an "escape" combo that is active on all layers and which is triggered when the 0th and
+This creates an "escape" combo that is active on layers `2` and `3` and which is triggered when the 0th and
 1st keys are pressed jointly within 25ms.
 
 ```C++
-ZMK_COMBO(esc,  &kp ESC, 0 1, ALL, 25)
+ZMK_COMBO(esc,  &kp ESC, 0 1, 2 3, 25)
 ```
 
 </details>

@@ -67,8 +67,8 @@ This defines a "copy"-combo for the middle + ring finger on the left bottom row,
 for the index + middle finger on the left bottom row. Both combos are active on all layers.
 
 ```c
-ZMK_COMBO(copy,  &kp LC(C), LB2 LB3, ALL)
-ZMK_COMBO(paste, &kp LC(V), LB1 LB2, ALL)
+ZMK_COMBO(copy,  &kp LC(C), LB2 LB3)
+ZMK_COMBO(paste, &kp LC(V), LB1 LB2)
 ```
 
 </details>
