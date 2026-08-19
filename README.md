@@ -162,6 +162,7 @@ The following layouts are currently implemented.
 | `adv360.h`               | 76               | Kinesis Advantage360 Pro               |
 | `eyelash42.h`            | 42+              | Eyelash Corne with Joystick & Encoder  |
 | `glove80.h`              | 80               | Glove80                                |
+| `helix.h`                | 64               | Helix / Felix                          |
 | `hillside_*.h`           | 46, 48, 52 or 56 | Hillside family                        |
 | `hummingbird.h`          | 30               | Hummingbird, Tern, Phantom, Rufous     |
 | `jian.h`                 | 44               | Jian, Jorne                            |
